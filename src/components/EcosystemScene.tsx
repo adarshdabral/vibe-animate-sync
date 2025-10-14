@@ -46,55 +46,53 @@ export const EcosystemScene = ({ scrollProgress }: EcosystemSceneProps) => {
       {/* Central Engine Core */}
       <Cylinder args={[1.5, 1.5, 2, 6]}>
         <meshStandardMaterial
-          color="#1a1a2e"
-          metalness={0.8}
-          roughness={0.2}
+          color="#0A2540"
+          metalness={0.3}
+          roughness={0.3}
         />
       </Cylinder>
 
       {/* Module slots (rings) */}
       <Torus args={[1.8, 0.05, 16, 32]} position={[0, 0.8, 0]} rotation={[Math.PI / 2, 0, 0]}>
-        <meshStandardMaterial color="#00fff0" emissive="#00fff0" emissiveIntensity={0.5} />
+        <meshStandardMaterial color="#1877F2" metalness={0.3} roughness={0.2} />
       </Torus>
       <Torus args={[1.8, 0.05, 16, 32]} position={[0, 0, 0]} rotation={[Math.PI / 2, 0, 0]}>
-        <meshStandardMaterial color="#ff00d6" emissive="#ff00d6" emissiveIntensity={0.5} />
+        <meshStandardMaterial color="#0A2540" metalness={0.3} roughness={0.2} />
       </Torus>
       <Torus args={[1.8, 0.05, 16, 32]} position={[0, -0.8, 0]} rotation={[Math.PI / 2, 0, 0]}>
-        <meshStandardMaterial color="#ffd400" emissive="#ffd400" emissiveIntensity={0.5} />
+        <meshStandardMaterial color="#ffffff" metalness={0.2} roughness={0.3} />
       </Torus>
 
-      {/* Module 1: Education (Cyan) */}
+      {/* Module 1: Education (Blue) */}
       <Box ref={module1Ref} args={[0.8, 0.8, 0.8]} position={[0, -3, 2]}>
         <meshStandardMaterial
-          color="#00fff0"
-          emissive="#00fff0"
-          emissiveIntensity={0.8}
-          metalness={0.5}
+          color="#1877F2"
+          metalness={0.3}
+          roughness={0.2}
         />
       </Box>
 
-      {/* Module 2: Entrepreneurship (Magenta) */}
+      {/* Module 2: Entrepreneurship (Deep Blue) */}
       <Box ref={module2Ref} args={[0.8, 0.8, 0.8]} position={[-2, -3, -1]}>
         <meshStandardMaterial
-          color="#ff00d6"
-          emissive="#ff00d6"
-          emissiveIntensity={0.8}
-          metalness={0.5}
+          color="#0A2540"
+          metalness={0.3}
+          roughness={0.3}
         />
       </Box>
 
-      {/* Module 3: Finance (Yellow) */}
+      {/* Module 3: Finance (White) */}
       <Box ref={module3Ref} args={[0.8, 0.8, 0.8]} position={[2, -3, -1]}>
         <meshStandardMaterial
-          color="#ffd400"
-          emissive="#ffd400"
-          emissiveIntensity={0.8}
-          metalness={0.5}
+          color="#ffffff"
+          metalness={0.1}
+          roughness={0.3}
         />
       </Box>
 
-      <ambientLight intensity={0.4} />
-      <pointLight position={[0, 5, 0]} intensity={1} color="#ffffff" />
+      <ambientLight intensity={0.7} />
+      <directionalLight position={[5, 5, 5]} intensity={0.5} color="#ffffff" />
+      <pointLight position={[0, 5, 0]} intensity={0.3} color="#1877F2" />
     </group>
   );
 };

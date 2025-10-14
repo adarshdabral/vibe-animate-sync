@@ -45,38 +45,38 @@ export const FinancialsScene = ({ scrollProgress }: FinancialsSceneProps) => {
       {visiblePoints.length > 1 && (
         <Line
           points={visiblePoints}
-          color="#00fff0"
-          lineWidth={3}
+          color="#1877F2"
+          lineWidth={4}
         />
       )}
 
       {/* Data points (Year markers) */}
       {localProgress > 0.3 && (
-        <Sphere args={[0.15, 16, 16]} position={[-3.3, -1, 0]}>
+        <Sphere args={[0.2, 16, 16]} position={[-3.3, -1, 0]}>
           <meshStandardMaterial
-            color="#ffd400"
-            emissive="#ffd400"
-            emissiveIntensity={1}
+            color="#0A2540"
+            metalness={0.3}
+            roughness={0.2}
           />
         </Sphere>
       )}
       
       {localProgress > 0.6 && (
-        <Sphere args={[0.15, 16, 16]} position={[0, 0.5, 0]}>
+        <Sphere args={[0.2, 16, 16]} position={[0, 0.5, 0]}>
           <meshStandardMaterial
-            color="#ff00d6"
-            emissive="#ff00d6"
-            emissiveIntensity={1}
+            color="#1877F2"
+            metalness={0.3}
+            roughness={0.2}
           />
         </Sphere>
       )}
       
       {localProgress > 0.9 && (
-        <Sphere args={[0.15, 16, 16]} position={[3.3, 3, 0]}>
+        <Sphere args={[0.2, 16, 16]} position={[3.3, 3, 0]}>
           <meshStandardMaterial
-            color="#00fff0"
-            emissive="#00fff0"
-            emissiveIntensity={1}
+            color="#0A2540"
+            metalness={0.3}
+            roughness={0.2}
           />
         </Sphere>
       )}
@@ -94,24 +94,25 @@ export const FinancialsScene = ({ scrollProgress }: FinancialsSceneProps) => {
           return (
             <Sphere
               key={i}
-              args={[0.05, 8, 8]}
+              args={[0.06, 8, 8]}
               position={[x, y, z]}
               scale={localProgress}
             >
               <meshStandardMaterial
-                color="#00fff0"
-                emissive="#00fff0"
-                emissiveIntensity={0.5}
+                color="#1877F2"
+                metalness={0.3}
+                roughness={0.2}
                 transparent
-                opacity={0.6}
+                opacity={0.7}
               />
             </Sphere>
           );
         })}
       </group>
 
-      <ambientLight intensity={0.3} />
-      <pointLight position={[0, 0, 10]} intensity={1} color="#00fff0" />
+      <ambientLight intensity={0.7} />
+      <directionalLight position={[5, 5, 5]} intensity={0.5} color="#ffffff" />
+      <pointLight position={[0, 0, 10]} intensity={0.3} color="#1877F2" />
     </group>
   );
 };

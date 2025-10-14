@@ -36,40 +36,52 @@ export const ProblemScene = ({ scrollProgress }: ProblemSceneProps) => {
 
   return (
     <group position={[0, 0, 0]}>
-      {/* Gap islands */}
+      {/* Puzzle tiles */}
       <Box position={[-4, -1, 0]} args={[2, 0.5, 2]}>
-        <meshStandardMaterial color="#1a1a2e" />
+        <meshStandardMaterial 
+          color="#f2f4f7" 
+          metalness={0.1}
+          roughness={0.4}
+        />
       </Box>
       
       <Box position={[4, -1, 0]} args={[2, 0.5, 2]}>
-        <meshStandardMaterial color="#1a1a2e" />
+        <meshStandardMaterial 
+          color="#f2f4f7"
+          metalness={0.1}
+          roughness={0.4}
+        />
       </Box>
 
-      {/* Bridge */}
+      {/* Bridge - clean glass-like */}
       <Cylinder
         ref={bridgeRef}
         position={[0, -0.7, 0]}
-        args={[0.2, 0.2, 8, 32]}
+        args={[0.15, 0.15, 8, 32]}
         rotation={[0, 0, Math.PI / 2]}
       >
         <meshStandardMaterial
-          color="#00fff0"
-          emissive="#00fff0"
-          emissiveIntensity={0.5}
+          color="#1877F2"
+          metalness={0.3}
+          roughness={0.2}
           transparent
           opacity={0}
         />
       </Cylinder>
 
-      {/* Simple figure (cube avatar) */}
+      {/* Figure */}
       <group ref={figureRef} position={[-4, 0, 0]}>
         <Box args={[0.4, 0.8, 0.4]}>
-          <meshStandardMaterial color="#ffd400" />
+          <meshStandardMaterial 
+            color="#0A2540"
+            metalness={0.2}
+            roughness={0.3}
+          />
         </Box>
       </group>
 
-      <ambientLight intensity={0.3} />
-      <directionalLight position={[5, 5, 5]} intensity={0.5} />
+      <ambientLight intensity={0.7} />
+      <directionalLight position={[5, 5, 5]} intensity={0.5} color="#ffffff" />
     </group>
   );
 };

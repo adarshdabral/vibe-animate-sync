@@ -57,11 +57,9 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        neon: {
-          cyan: "hsl(var(--neon-cyan))",
-          magenta: "hsl(var(--neon-magenta))",
-          yellow: "hsl(var(--neon-yellow))",
-        },
+        'deep-blue': 'hsl(var(--deep-blue))',
+        'accent-blue': 'hsl(var(--accent-blue))',
+        'soft-gray': 'hsl(var(--soft-gray))',
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -70,7 +68,8 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        display: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
+        mono: ['IBM Plex Mono', 'monospace'],
       },
       keyframes: {
         "accordion-down": {
