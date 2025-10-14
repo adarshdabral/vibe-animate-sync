@@ -1,6 +1,6 @@
-import { useRef } from 'react';
+import { useRef, useMemo } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { Box, Cylinder, Torus } from '@react-three/drei';
+import { Box, Cylinder, Sphere } from '@react-three/drei';
 import * as THREE from 'three';
 
 interface EcosystemSceneProps {
@@ -9,90 +9,195 @@ interface EcosystemSceneProps {
 
 export const EcosystemScene = ({ scrollProgress }: EcosystemSceneProps) => {
   const engineRef = useRef<THREE.Group>(null);
-  const module1Ref = useRef<THREE.Mesh>(null);
-  const module2Ref = useRef<THREE.Mesh>(null);
-  const module3Ref = useRef<THREE.Mesh>(null);
+  const educationRef = useRef<THREE.Group>(null);
+  const entrepreneurshipRef = useRef<THREE.Group>(null);
+  const financeRef = useRef<THREE.Group>(null);
+  const particlesRef = useRef<THREE.Group>(null);
+
+  // Map scroll progress (0.3 to 0.5 range for ecosystem section)
+  const localProgress = useMemo(() => 
+    Math.max(0, Math.min((scrollProgress - 0.3) / 0.2, 1)),
+    [scrollProgress]
+  );
+
+  // Calculate individual module progress
+  const educationProgress = useMemo(() => 
+    Math.max(0, Math.min((localProgress - 0.25) / 0.25, 1)),
+    [localProgress]
+  );
+  
+  const entrepreneurshipProgress = useMemo(() => 
+    Math.max(0, Math.min((localProgress - 0.5) / 0.25, 1)),
+    [localProgress]
+  );
+  
+  const financeProgress = useMemo(() => 
+    Math.max(0, Math.min((localProgress - 0.75) / 0.25, 1)),
+    [localProgress]
+  );
 
   useFrame((state) => {
+    const time = state.clock.elapsedTime;
+
+    // Engine core pulse
     if (engineRef.current) {
-      engineRef.current.rotation.y = state.clock.elapsedTime * 0.2;
+      const pulseScale = 1 + Math.sin(time * 2) * 0.03;
+      engineRef.current.scale.setScalar(pulseScale);
+      engineRef.current.rotation.y = time * 0.15;
     }
 
-    // Map scroll progress (0.3 to 0.5 range for ecosystem section)
-    const localProgress = Math.max(0, Math.min((scrollProgress - 0.3) / 0.2, 1));
-    
-    // Three phases: module 1 (0-0.33), module 2 (0.33-0.66), module 3 (0.66-1)
-    if (module1Ref.current) {
-      const progress1 = Math.min(localProgress / 0.33, 1);
-      module1Ref.current.position.y = -3 + progress1 * 3;
-      module1Ref.current.scale.setScalar(0.5 + progress1 * 0.5);
+    // Education module animation
+    if (educationRef.current) {
+      const targetY = educationProgress > 0 ? 0 : -5;
+      educationRef.current.position.y = THREE.MathUtils.lerp(
+        educationRef.current.position.y,
+        targetY,
+        0.1
+      );
+      educationRef.current.rotation.y = time * 0.3;
     }
 
-    if (module2Ref.current) {
-      const progress2 = Math.max(0, Math.min((localProgress - 0.33) / 0.33, 1));
-      module2Ref.current.position.y = -3 + progress2 * 3;
-      module2Ref.current.scale.setScalar(0.5 + progress2 * 0.5);
+    // Entrepreneurship module animation
+    if (entrepreneurshipRef.current) {
+      const targetY = entrepreneurshipProgress > 0 ? 0 : -5;
+      entrepreneurshipRef.current.position.y = THREE.MathUtils.lerp(
+        entrepreneurshipRef.current.position.y,
+        targetY,
+        0.1
+      );
+      entrepreneurshipRef.current.rotation.y = time * -0.25;
     }
 
-    if (module3Ref.current) {
-      const progress3 = Math.max(0, Math.min((localProgress - 0.66) / 0.34, 1));
-      module3Ref.current.position.y = -3 + progress3 * 3;
-      module3Ref.current.scale.setScalar(0.5 + progress3 * 0.5);
+    // Finance module animation
+    if (financeRef.current) {
+      const targetY = financeProgress > 0 ? 0 : -5;
+      financeRef.current.position.y = THREE.MathUtils.lerp(
+        financeRef.current.position.y,
+        targetY,
+        0.1
+      );
+      financeRef.current.rotation.y = time * 0.35;
+    }
+
+    // Particles animation
+    if (particlesRef.current) {
+      particlesRef.current.children.forEach((particle, i) => {
+        particle.position.y += Math.sin(time * 2 + i) * 0.002;
+        particle.rotation.x += 0.01;
+        particle.rotation.y += 0.01;
+      });
     }
   });
 
   return (
-    <group ref={engineRef} position={[0, 0, 0]}>
-      {/* Central Engine Core */}
-      <Cylinder args={[1.5, 1.5, 2, 6]}>
-        <meshStandardMaterial
-          color="#0A2540"
-          metalness={0.3}
-          roughness={0.3}
-        />
-      </Cylinder>
+    <group position={[0, 0, 0]}>
+      {/* Central Wallet/Engine Core */}
+      <group ref={engineRef}>
+        <Cylinder args={[0.8, 0.8, 1.5, 6]}>
+          <meshStandardMaterial
+            color="#0A2540"
+            metalness={0.5}
+            roughness={0.2}
+            emissive="#1877F2"
+            emissiveIntensity={0.2}
+          />
+        </Cylinder>
+        <Sphere args={[0.4, 32, 32]} position={[0, 0.75, 0]}>
+          <meshStandardMaterial
+            color="#1877F2"
+            metalness={0.4}
+            roughness={0.3}
+            emissive="#1877F2"
+            emissiveIntensity={0.5}
+          />
+        </Sphere>
+      </group>
 
-      {/* Module slots (rings) */}
-      <Torus args={[1.8, 0.05, 16, 32]} position={[0, 0.8, 0]} rotation={[Math.PI / 2, 0, 0]}>
-        <meshStandardMaterial color="#1877F2" metalness={0.3} roughness={0.2} />
-      </Torus>
-      <Torus args={[1.8, 0.05, 16, 32]} position={[0, 0, 0]} rotation={[Math.PI / 2, 0, 0]}>
-        <meshStandardMaterial color="#0A2540" metalness={0.3} roughness={0.2} />
-      </Torus>
-      <Torus args={[1.8, 0.05, 16, 32]} position={[0, -0.8, 0]} rotation={[Math.PI / 2, 0, 0]}>
-        <meshStandardMaterial color="#ffffff" metalness={0.2} roughness={0.3} />
-      </Torus>
+      {/* Education Module */}
+      <group ref={educationRef} position={[2.5, -5, 0]}>
+        <Box args={[1, 1, 0.2]}>
+          <meshStandardMaterial
+            color="#1877F2"
+            metalness={0.3}
+            roughness={0.2}
+            emissive="#1877F2"
+            emissiveIntensity={educationProgress * 0.5}
+          />
+        </Box>
+        {/* Icon representation */}
+        <Sphere args={[0.15, 16, 16]} position={[0, 0, 0.15]}>
+          <meshStandardMaterial color="#ffffff" />
+        </Sphere>
+      </group>
 
-      {/* Module 1: Education (Blue) */}
-      <Box ref={module1Ref} args={[0.8, 0.8, 0.8]} position={[0, -3, 2]}>
-        <meshStandardMaterial
-          color="#1877F2"
-          metalness={0.3}
-          roughness={0.2}
-        />
-      </Box>
+      {/* Entrepreneurship Module */}
+      <group ref={entrepreneurshipRef} position={[-2.5, -5, 0]}>
+        <Box args={[1, 1, 0.2]}>
+          <meshStandardMaterial
+            color="#0A2540"
+            metalness={0.3}
+            roughness={0.3}
+            emissive="#0A2540"
+            emissiveIntensity={entrepreneurshipProgress * 0.3}
+          />
+        </Box>
+        {/* Icon representation */}
+        <Box args={[0.3, 0.3, 0.05]} position={[0, 0, 0.15]}>
+          <meshStandardMaterial color="#ffffff" />
+        </Box>
+      </group>
 
-      {/* Module 2: Entrepreneurship (Deep Blue) */}
-      <Box ref={module2Ref} args={[0.8, 0.8, 0.8]} position={[-2, -3, -1]}>
-        <meshStandardMaterial
-          color="#0A2540"
-          metalness={0.3}
-          roughness={0.3}
-        />
-      </Box>
+      {/* Finance Module */}
+      <group ref={financeRef} position={[0, -5, -2.5]}>
+        <Box args={[1, 1, 0.2]}>
+          <meshStandardMaterial
+            color="#ffffff"
+            metalness={0.2}
+            roughness={0.3}
+            emissive="#1877F2"
+            emissiveIntensity={financeProgress * 0.4}
+          />
+        </Box>
+        {/* Icon representation */}
+        <Cylinder args={[0.2, 0.2, 0.05, 16]} position={[0, 0, 0.15]}>
+          <meshStandardMaterial color="#1877F2" />
+        </Cylinder>
+      </group>
 
-      {/* Module 3: Finance (White) */}
-      <Box ref={module3Ref} args={[0.8, 0.8, 0.8]} position={[2, -3, -1]}>
-        <meshStandardMaterial
-          color="#ffffff"
-          metalness={0.1}
-          roughness={0.3}
-        />
-      </Box>
+      {/* Particle effects */}
+      <group ref={particlesRef}>
+        {Array.from({ length: 20 }).map((_, i) => {
+          const angle = (i / 20) * Math.PI * 2;
+          const radius = 3 + Math.random() * 1;
+          const x = Math.cos(angle) * radius;
+          const z = Math.sin(angle) * radius;
+          const y = (Math.random() - 0.5) * 2;
+          
+          const isVisible = 
+            (i < 7 && educationProgress > 0.5) ||
+            (i >= 7 && i < 14 && entrepreneurshipProgress > 0.5) ||
+            (i >= 14 && financeProgress > 0.5);
 
-      <ambientLight intensity={0.7} />
+          return (
+            <Sphere
+              key={i}
+              args={[0.05, 8, 8]}
+              position={[x, y, z]}
+              scale={isVisible ? 1 : 0}
+            >
+              <meshStandardMaterial
+                color={i < 7 ? "#1877F2" : i < 14 ? "#0A2540" : "#ffffff"}
+                emissive={i < 7 ? "#1877F2" : i < 14 ? "#0A2540" : "#1877F2"}
+                emissiveIntensity={0.6}
+              />
+            </Sphere>
+          );
+        })}
+      </group>
+
+      <ambientLight intensity={0.6} />
       <directionalLight position={[5, 5, 5]} intensity={0.5} color="#ffffff" />
-      <pointLight position={[0, 5, 0]} intensity={0.3} color="#1877F2" />
+      <pointLight position={[0, 3, 0]} intensity={0.5} color="#1877F2" />
     </group>
   );
 };
