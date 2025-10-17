@@ -8,89 +8,93 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* VroPay GenZ Professional Theme */
+    /* VroPay Clean Blue Theme - White Background with Deep Blue Accents */
     --background: 0 0% 100%;
-    --foreground: 210 100% 12%;
+    --foreground: 210 100% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 100% 12%;
+    --card-foreground: 210 100% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 100% 12%;
+    --popover-foreground: 210 100% 15%;
 
-    --primary: 213 94% 53%;
+    --primary: 210 100% 15%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 100% 16%;
+    --secondary: 213 84% 53%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 16% 95%;
-    --muted-foreground: 210 8% 46%;
+    --muted: 210 29% 97%;
+    --muted-foreground: 210 10% 45%;
 
-    --accent: 280 100% 65%;
+    --accent: 213 84% 53%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 210 16% 90%;
-    --input: 210 16% 93%;
-    --ring: 213 94% 53%;
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 213 84% 53%;
 
-    --radius: 1rem;
+    --radius: 0.75rem;
 
-    /* GenZ gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(213 94% 53%), hsl(280 100% 65%));
-    --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 40% 98%));
-    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(210 20% 98%));
+    /* Clean Blue Colors */
+    --deep-blue: 210 100% 15%;
+    --accent-blue: 213 84% 53%;
+    --soft-gray: 210 29% 97%;
+    --sky-start: 0 0% 100%;
+    --sky-end: 210 50% 94%;
+
+    /* Gradients */
+    --gradient-sky: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 50% 94%));
+    --gradient-blue: linear-gradient(135deg, hsl(210 100% 15%), hsl(213 84% 53%));
     
     /* Shadows */
-    --shadow-soft: 0 4px 24px -4px hsl(213 94% 53% / 0.1);
-    --shadow-glow: 0 0 40px hsl(213 94% 53% / 0.15);
-    --shadow-card: 0 8px 32px -8px hsl(210 100% 12% / 0.08);
+    --shadow-soft: 0 4px 20px hsl(210 100% 15% / 0.08), 0 2px 8px hsl(210 100% 15% / 0.04);
+    --shadow-soft-lg: 0 10px 40px hsl(210 100% 15% / 0.12), 0 4px 16px hsl(210 100% 15% / 0.06);
     
     /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-smooth: all 0.3s cubic-bezier(0.22, 0.86, 0.35, 1.0);
 
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 210 100% 12%;
-    --sidebar-primary: 213 94% 53%;
+    --sidebar-foreground: 210 100% 15%;
+    --sidebar-primary: 210 100% 15%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 16% 95%;
-    --sidebar-accent-foreground: 210 100% 12%;
-    --sidebar-border: 210 16% 90%;
-    --sidebar-ring: 213 94% 53%;
+    --sidebar-accent: 210 29% 97%;
+    --sidebar-accent-foreground: 210 100% 15%;
+    --sidebar-border: 210 20% 90%;
+    --sidebar-ring: 213 84% 53%;
   }
 
   .dark {
-    --background: 210 100% 12%;
+    --background: 210 100% 15%;
     --foreground: 0 0% 100%;
-    --card: 210 50% 10%;
+    --card: 210 80% 18%;
     --card-foreground: 0 0% 100%;
-    --popover: 210 50% 10%;
+    --popover: 210 80% 18%;
     --popover-foreground: 0 0% 100%;
-    --primary: 213 94% 53%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 210 50% 20%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 210 100% 15%;
+    --secondary: 213 84% 53%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 210 50% 20%;
-    --muted-foreground: 210 16% 70%;
-    --accent: 280 100% 65%;
+    --muted: 210 50% 25%;
+    --muted-foreground: 210 20% 70%;
+    --accent: 213 84% 53%;
     --accent-foreground: 0 0% 100%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 210 50% 20%;
-    --input: 210 50% 20%;
-    --ring: 213 94% 53%;
-    --sidebar-background: 210 50% 10%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 210 50% 25%;
+    --input: 210 50% 25%;
+    --ring: 213 84% 53%;
+    --sidebar-background: 210 80% 18%;
     --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 213 94% 53%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 210 50% 20%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 210 100% 15%;
+    --sidebar-accent: 210 50% 25%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 210 50% 20%;
-    --sidebar-ring: 213 94% 53%;
+    --sidebar-border: 210 50% 25%;
+    --sidebar-ring: 213 84% 53%;
   }
 }
 
@@ -102,52 +106,34 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 50% 94%));
+    background-attachment: fixed;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
+  /* Clean text utilities */
+  .text-deep-blue {
+    color: hsl(var(--deep-blue));
+  }
+
+  .text-accent-blue {
+    color: hsl(var(--accent-blue));
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--deep-blue)), hsl(var(--accent-blue)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
 
 @layer utilities {
-  .gradient-primary {
-    background: var(--gradient-primary);
-  }
-  
-  .gradient-hero {
-    background: var(--gradient-hero);
-  }
-  
-  .gradient-card {
-    background: var(--gradient-card);
-  }
-  
-  .shadow-soft {
+  .soft-shadow {
     box-shadow: var(--shadow-soft);
   }
-  
-  .shadow-glow {
-    box-shadow: var(--shadow-glow);
-  }
-  
-  .shadow-card {
-    box-shadow: var(--shadow-card);
-  }
-  
-  .transition-smooth {
-    transition: var(--transition-smooth);
-  }
-  
-  .transition-bounce {
-    transition: var(--transition-bounce);
-  }
-  
-  .glass-effect {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+
+  .soft-shadow-lg {
+    box-shadow: var(--shadow-soft-lg);
   }
 }

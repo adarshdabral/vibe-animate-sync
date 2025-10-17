@@ -7,7 +7,6 @@ import { ScrollProgress } from '@/components/ScrollProgress';
 import { SectionNav } from '@/components/SectionNav';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { ArrowRight, Sparkles, TrendingUp, Users, Zap } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -54,60 +53,67 @@ const Index = () => {
   };
 
   return (
-    <div ref={containerRef} className="relative min-h-screen bg-gradient-hero overflow-x-hidden">
+    <div ref={containerRef} className="relative">
       <ScrollProgress progress={scrollProgress} />
       <SectionNav currentSection={currentSectionIndex} onNavigate={handleNavigate} />
       <Canvas3D scrollProgress={scrollProgress} currentSection={currentSection} />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-6">
-        <div className="max-w-5xl mx-auto text-center space-y-8 relative z-10">
+        <div className="max-w-5xl mx-auto text-center z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect mb-6"
-          >
-            <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-secondary">India's First Founder OS</span>
-          </motion.div>
-          
-          <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-6xl md:text-8xl font-bold text-secondary leading-tight"
+            transition={{ duration: 0.8 }}
           >
-            One Platform.
-            <br />
-            A <span className="bg-gradient-primary bg-clip-text text-transparent">₹100 Cr</span> Vision.
-          </motion.h1>
-          
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="space-y-4"
-          >
-            <p className="text-5xl md:text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              ₹10 Crore for 10%
-            </p>
-            <p className="text-2xl text-muted-foreground">
-              (post-money ₹100 Cr)
+            <h1 className="text-7xl md:text-9xl font-black mb-6 leading-none font-display">
+              <span className="text-deep-blue">₹10 Crore</span>
+              <br />
+              <span className="text-foreground">for</span>{' '}
+              <span className="text-accent-blue">10%</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8 font-mono">
+              (post-money <span className="text-deep-blue font-bold">₹100 Cr</span>)
             </p>
           </motion.div>
-          
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            className="mb-12"
+          >
+            <Card className="inline-block p-8 bg-card/95 backdrop-blur-xl border-border soft-shadow-lg">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-deep-blue">
+                One Platform. A ₹100 Cr Vision.
+              </h2>
+              <div className="flex flex-wrap gap-4 justify-center text-sm md:text-base">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-accent-blue" />
+                  <span className="text-accent-blue font-semibold">Education</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-deep-blue" />
+                  <span className="text-deep-blue font-semibold">Entrepreneurship</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-primary" />
+                  <span className="text-primary font-semibold">Finance</span>
+                </div>
+              </div>
+            </Card>
+          </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
           >
             <Button 
               size="lg" 
-              className="bg-gradient-primary hover:shadow-glow text-white text-lg px-8 py-6 rounded-xl shadow-soft transition-bounce group"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground soft-shadow text-lg px-8 py-6 font-bold"
             >
               View Deck
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-smooth" />
             </Button>
           </motion.div>
         </div>
@@ -115,258 +121,234 @@ const Index = () => {
 
       {/* Problem Section */}
       <section className="relative min-h-screen flex items-center justify-center px-6">
-        <div className="max-w-4xl mx-auto space-y-12 relative z-10">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-5xl md:text-6xl font-bold text-secondary text-center"
-          >
-            Real Pain. <span className="text-primary">Real People.</span>
-          </motion.h2>
-          
-          <motion.p 
+        <div className="max-w-4xl mx-auto z-10">
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl text-muted-foreground max-w-2xl mx-auto text-center"
+            transition={{ duration: 0.8 }}
+            viewport={{ once: false }}
           >
-            Millions of aspiring founders stuck in broken systems. 
-            <span className="font-bold text-primary"> 90% of Tier 2/3 founders give up pre-launch.</span>
-          </motion.p>
-          
-          <div className="grid md:grid-cols-3 gap-6 mt-12">
-            {[
-              { icon: "🪤", title: "Scams", desc: "Unverified mentors and fake courses", delay: 0 },
-              { icon: "📉", title: "No Literacy", desc: "Fragmented financial knowledge", delay: 0.1 },
-              { icon: "🧾", title: "No Capital", desc: "Limited access to funding", delay: 0.2 }
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: item.delay }}
-                whileHover={{ y: -8, transition: { duration: 0.2 } }}
-              >
-                <Card className="p-6 glass-effect hover:shadow-card transition-smooth cursor-pointer group">
-                  <div className="text-4xl mb-4 group-hover:scale-110 transition-bounce">{item.icon}</div>
-                  <h3 className="text-2xl font-bold text-secondary mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.desc}</p>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
+            <h2 className="text-5xl md:text-7xl font-black mb-8 text-center font-display">
+              Real Pain. <span className="text-accent-blue">Real People.</span>
+            </h2>
+            <p className="text-center text-lg text-muted-foreground mb-12">
+              90% of Tier 2/3 founders give up pre-launch
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-6 mb-16">
+              <Card className="p-6 bg-card/95 backdrop-blur-xl border-border soft-shadow">
+                <div className="text-4xl mb-4">💔</div>
+                <h3 className="text-xl font-bold mb-2 text-deep-blue">Fragmented Knowledge</h3>
+                <p className="text-muted-foreground">
+                  Jump between 10+ platforms for learning, incubation, and funding
+                </p>
+              </Card>
+
+              <Card className="p-6 bg-card/95 backdrop-blur-xl border-border soft-shadow">
+                <div className="text-4xl mb-4">⚠️</div>
+                <h3 className="text-xl font-bold mb-2 text-deep-blue">Scams & Uncertainty</h3>
+                <p className="text-muted-foreground">
+                  Unverified courses, fake mentors, predatory lending
+                </p>
+              </Card>
+
+              <Card className="p-6 bg-card/95 backdrop-blur-xl border-border soft-shadow">
+                <div className="text-4xl mb-4">❌</div>
+                <h3 className="text-xl font-bold mb-2 text-deep-blue">No Real-time Help</h3>
+                <p className="text-muted-foreground">
+                  Critical moments—pitch prep, funding asks—zero instant support
+                </p>
+              </Card>
+            </div>
+
+            <div className="text-center">
+              <Card className="inline-block p-8 bg-accent-blue/10 backdrop-blur-xl border-accent-blue soft-shadow-lg">
+                <h3 className="text-3xl font-bold mb-4 text-deep-blue">
+                  VroPay Bridge Changes Everything
+                </h3>
+                <p className="text-lg text-muted-foreground">
+                  One platform. All solutions. Real-time support.
+                </p>
+              </Card>
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Ecosystem Section */}
       <section className="relative min-h-screen flex items-center justify-center px-6">
-        <div className="max-w-6xl mx-auto space-y-16 relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center space-y-6"
-          >
-            <h2 className="text-5xl md:text-6xl font-bold text-secondary">
-              A Single Engine. <span className="bg-gradient-primary bg-clip-text text-transparent">3 Growth Levers.</span>
-            </h2>
-          </motion.div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { 
-                icon: Users, 
-                emoji: "📘",
-                title: "Education", 
-                items: ["Startup Tuition", "Playbooks", "Expert Mentorship"],
-                delay: 0 
-              },
-              { 
-                icon: Zap, 
-                emoji: "🤝",
-                title: "Entrepreneurship", 
-                items: ["Community", "Incubation", "Hiring Support"],
-                delay: 0.1 
-              },
-              { 
-                icon: TrendingUp, 
-                emoji: "💳",
-                title: "Finance", 
-                items: ["Personal Finance", "Credit Access", "Lending Support"],
-                delay: 0.2 
-              }
-            ].map((pillar, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: pillar.delay }}
-                whileHover={{ y: -12, transition: { duration: 0.3 } }}
-              >
-                <Card className="p-8 glass-effect hover:shadow-glow transition-smooth cursor-pointer group relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-5 transition-smooth" />
-                  <div className="relative space-y-4">
-                    <div className="flex items-center gap-4">
-                      <div className="text-5xl group-hover:scale-110 transition-bounce">{pillar.emoji}</div>
-                      <pillar.icon className="w-8 h-8 text-primary opacity-50" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-primary">{pillar.title}</h3>
-                    <ul className="text-muted-foreground space-y-2">
-                      {pillar.items.map((item, j) => (
-                        <motion.li 
-                          key={j}
-                          initial={{ opacity: 0, x: -10 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.4, delay: pillar.delay + 0.1 * j }}
-                        >
-                          • {item}
-                        </motion.li>
-                      ))}
-                    </ul>
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-          
+        <div className="max-w-5xl mx-auto z-10">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            whileHover={{ scale: 1.02 }}
-            className="text-center p-12 gradient-card rounded-3xl border-2 border-primary/20 shadow-glow cursor-pointer"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: false }}
           >
-            <p className="text-4xl md:text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              ₹200/month
-            </p>
-            <p className="text-xl text-muted-foreground mt-4">
-              Cheaper than a McD Meal 🍔
-            </p>
+            <h2 className="text-5xl md:text-7xl font-black mb-12 text-center font-display">
+              A Single Engine. <span className="text-accent-blue">3 Growth Levers.</span>
+            </h2>
+
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
+              <Card className="p-8 bg-card/95 backdrop-blur-xl border-accent-blue soft-shadow-lg">
+                <div className="text-6xl mb-4">📚</div>
+                <h3 className="text-2xl font-bold mb-4 text-accent-blue">Education</h3>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li>• Startup Tuition</li>
+                  <li>• Playbooks</li>
+                  <li>• Live Expert Sessions</li>
+                  <li>• Certifications</li>
+                </ul>
+              </Card>
+
+              <Card className="p-8 bg-card/95 backdrop-blur-xl border-deep-blue soft-shadow-lg">
+                <div className="text-6xl mb-4">🚀</div>
+                <h3 className="text-2xl font-bold mb-4 text-deep-blue">Entrepreneurship</h3>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li>• Incubation</li>
+                  <li>• Hiring Platform</li>
+                  <li>• Community</li>
+                  <li>• Pitch Practice AI</li>
+                </ul>
+              </Card>
+
+              <Card className="p-8 bg-card/95 backdrop-blur-xl border-primary soft-shadow-lg">
+                <div className="text-6xl mb-4">💳</div>
+                <h3 className="text-2xl font-bold mb-4 text-primary">Finance</h3>
+                <ul className="space-y-2 text-muted-foreground">
+                  <li>• Credit & Lending</li>
+                  <li>• Personal Finance</li>
+                  <li>• Fundraising Support</li>
+                  <li>• Investment Tracking</li>
+                </ul>
+              </Card>
+            </div>
+
+            <div className="text-center">
+              <Card className="inline-block p-10 bg-card/95 backdrop-blur-xl border-accent-blue soft-shadow-lg">
+                <p className="text-5xl md:text-7xl font-black mb-4 font-mono">
+                  <span className="text-deep-blue">₹200</span>
+                  <span className="text-foreground">/month</span>
+                </p>
+                <p className="text-xl text-muted-foreground">
+                  Cheaper than a McD Meal
+                </p>
+              </Card>
+            </div>
           </motion.div>
         </div>
       </section>
 
       {/* Financials Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 py-20">
-        <div className="max-w-6xl mx-auto space-y-16 relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center space-y-6"
-          >
-            <h2 className="text-5xl md:text-6xl font-bold text-secondary">
-              Strong Economics. <span className="bg-gradient-primary bg-clip-text text-transparent">Scalable Vision.</span>
-            </h2>
-          </motion.div>
-          
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { year: "Year 1", arr: "₹24 Cr", users: "~1L users", delay: 0 },
-              { year: "Year 2", arr: "₹240 Cr", users: "~10L users", delay: 0.1 },
-              { year: "Year 3", arr: "₹2400 Cr", users: "~1Cr users", delay: 0.2 }
-            ].map((data, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: data.delay }}
-                whileHover={{ y: -8, scale: 1.02 }}
-              >
-                <Card className="p-6 glass-effect hover:shadow-glow transition-smooth cursor-pointer text-center space-y-2 group">
-                  <p className="text-sm text-muted-foreground">{data.year}</p>
-                  <p className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent font-mono group-hover:scale-110 transition-bounce inline-block">
-                    {data.arr} ARR
-                  </p>
-                  <p className="text-sm text-muted-foreground">{data.users}</p>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-          
+      <section className="relative min-h-screen flex items-center justify-center px-6 pb-20">
+        <div className="max-w-6xl mx-auto z-10">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            whileHover={{ scale: 1.02 }}
-          >
-            <Card className="p-8 glass-effect hover:shadow-glow transition-smooth cursor-pointer">
-              <div className="text-center">
-                <p className="text-2xl font-bold text-secondary mb-2">Unit Economics</p>
-                <p className="text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent font-mono">
-                  LTV/CAC: 60x
-                </p>
-              </div>
-            </Card>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <Card className="p-8 glass-effect shadow-card">
-              <h3 className="text-2xl font-bold text-secondary mb-6 text-center">Use of Funds</h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                {[
-                  { label: "Product & Tech", percent: 40, delay: 0 },
-                  { label: "GTM", percent: 30, delay: 0.1 },
-                  { label: "Community & Partnerships", percent: 20, delay: 0.2 },
-                  { label: "Ops", percent: 10, delay: 0.3 }
-                ].map((fund, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: fund.delay }}
-                    className="space-y-2"
-                  >
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">{fund.label}</span>
-                      <span className="font-bold text-primary">{fund.percent}%</span>
-                    </div>
-                    <div className="h-2 bg-muted rounded-full overflow-hidden">
-                      <motion.div 
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${fund.percent}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: fund.delay + 0.2, ease: "easeOut" }}
-                        className="h-full bg-gradient-primary"
-                      />
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </Card>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="text-center p-12 gradient-card rounded-3xl shadow-glow"
+            viewport={{ once: false }}
           >
-            <p className="text-5xl md:text-6xl font-bold text-secondary">
-              Make in India <motion.span 
-                animate={{ x: [0, 10, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                className="inline-block text-primary"
-              >→</motion.span> Made for the World 🌍
-            </p>
+            <h2 className="text-5xl md:text-7xl font-black mb-12 text-center font-display">
+              Strong Economics. <span className="text-accent-blue">Scalable Vision.</span>
+            </h2>
+
+            <div className="grid md:grid-cols-3 gap-6 mb-16">
+              <Card className="p-8 bg-card/95 backdrop-blur-xl border-border soft-shadow">
+                <p className="text-sm text-muted-foreground mb-2 font-mono">Year 1</p>
+                <p className="text-4xl font-black text-deep-blue mb-2 font-mono">₹24 Cr</p>
+                <p className="text-sm text-muted-foreground">~1L users ARR</p>
+              </Card>
+
+              <Card className="p-8 bg-card/95 backdrop-blur-xl border-border soft-shadow">
+                <p className="text-sm text-muted-foreground mb-2 font-mono">Year 2</p>
+                <p className="text-4xl font-black text-accent-blue mb-2 font-mono">₹240 Cr</p>
+                <p className="text-sm text-muted-foreground">~10L users ARR</p>
+              </Card>
+
+              <Card className="p-8 bg-card/95 backdrop-blur-xl border-border soft-shadow">
+                <p className="text-sm text-muted-foreground mb-2 font-mono">Year 3</p>
+                <p className="text-4xl font-black text-deep-blue mb-2 font-mono">₹2,400 Cr</p>
+                <p className="text-sm text-muted-foreground">~1Cr users ARR</p>
+              </Card>
+            </div>
+
+            <Card className="p-10 bg-card/95 backdrop-blur-xl border-accent-blue soft-shadow-lg mb-16">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="text-center md:text-left">
+                  <p className="text-sm text-muted-foreground mb-2">Unit Economics</p>
+                  <p className="text-5xl font-black font-mono">
+                    <span className="text-deep-blue">LTV/CAC:</span>{' '}
+                    <span className="text-accent-blue">60x</span>
+                  </p>
+                </div>
+                <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div>
+                    <p className="text-muted-foreground">CAC</p>
+                    <p className="font-bold text-lg font-mono">₹100</p>
+                  </div>
+                  <div>
+                    <p className="text-muted-foreground">LTV</p>
+                    <p className="font-bold text-lg font-mono">₹6,000</p>
+                  </div>
+                  <div>
+                    <p className="text-muted-foreground">Churn</p>
+                    <p className="font-bold text-lg font-mono">8%/yr</p>
+                  </div>
+                  <div>
+                    <p className="text-muted-foreground">NPS</p>
+                    <p className="font-bold text-lg font-mono">72</p>
+                  </div>
+                </div>
+              </div>
+            </Card>
+
+            <div className="text-center">
+              <h3 className="text-4xl md:text-6xl font-black mb-6 font-display">
+                <span className="text-deep-blue">Make in India</span>
+                <br />
+                <span className="text-accent-blue">Made for the World</span>
+              </h3>
+              <p className="text-xl text-muted-foreground mb-12">
+                Scaling globally. Starting locally. Building for Gen-Z everywhere.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                <Button 
+                  size="lg" 
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground soft-shadow text-lg px-8 py-6 font-bold"
+                >
+                  Schedule Call
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="border-primary text-primary hover:bg-primary/10 text-lg px-8 py-6 font-bold soft-shadow"
+                >
+                  Download Deck
+                </Button>
+              </div>
+
+              <Card className="inline-block p-8 bg-soft-gray backdrop-blur-xl border-border soft-shadow">
+                <h4 className="text-xl font-bold mb-4 text-deep-blue">Use of Funds</h4>
+                <div className="grid grid-cols-2 gap-4 text-left">
+                  <div>
+                    <p className="text-muted-foreground text-sm">Product & Tech</p>
+                    <p className="font-bold text-lg font-mono">40%</p>
+                  </div>
+                  <div>
+                    <p className="text-muted-foreground text-sm">GTM</p>
+                    <p className="font-bold text-lg font-mono">30%</p>
+                  </div>
+                  <div>
+                    <p className="text-muted-foreground text-sm">Community & Partnerships</p>
+                    <p className="font-bold text-lg font-mono">20%</p>
+                  </div>
+                  <div>
+                    <p className="text-muted-foreground text-sm">Ops</p>
+                    <p className="font-bold text-lg font-mono">10%</p>
+                  </div>
+                </div>
+              </Card>
+            </div>
           </motion.div>
         </div>
       </section>
