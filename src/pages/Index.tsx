@@ -67,14 +67,14 @@ const Index = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-7xl md:text-9xl font-black mb-6 leading-none font-display">
-              <span className="text-deep-blue">₹10 Crore</span>
+              <span className="text-deep-blue">VroPay</span>
               <br />
-              <span className="text-foreground">for</span>{' '}
-              <span className="text-accent-blue">10%</span>
+              <span className="text-accent-blue">Finance</span><br/>
+              <span className="text-foreground">EcoSystem </span>{' '}
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 font-mono">
+            {/*<p className="text-xl md:text-2xl text-muted-foreground mb-8 font-mono">
               (post-money <span className="text-deep-blue font-bold">₹100 Cr</span>)
-            </p>
+            </p>*/}
           </motion.div>
 
           <motion.div
@@ -85,7 +85,7 @@ const Index = () => {
           >
             <Card className="inline-block p-8 bg-card/95 backdrop-blur-xl border-border soft-shadow-lg">
               <h2 className="text-2xl md:text-3xl font-bold mb-4 text-deep-blue">
-                One Platform. A ₹100 Cr Vision.
+                VroPay : Dream, Build, Launch
               </h2>
               <div className="flex flex-wrap gap-4 justify-center text-sm md:text-base">
                 <div className="flex items-center gap-2">
@@ -104,7 +104,7 @@ const Index = () => {
             </Card>
           </motion.div>
 
-          <motion.div
+          {/*<motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.5 }}
@@ -113,9 +113,9 @@ const Index = () => {
               size="lg" 
               className="bg-primary hover:bg-primary/90 text-primary-foreground soft-shadow text-lg px-8 py-6 font-bold"
             >
-              View Deck
+              View Pitch Deck
             </Button>
-          </motion.div>
+          </motion.div>*/}
         </div>
       </section>
 
@@ -129,10 +129,10 @@ const Index = () => {
             viewport={{ once: false }}
           >
             <h2 className="text-5xl md:text-7xl font-black mb-8 text-center font-display">
-              Real Pain. <span className="text-accent-blue">Real People.</span>
+              We Understand Your <span className="text-accent-blue">Struggle</span>
             </h2>
             <p className="text-center text-lg text-muted-foreground mb-12">
-              90% of Tier 2/3 founders give up pre-launch
+              Launching a startup is tough — especially if you’re first-time founder in a Tier 2/3 city. Most give up because they can’t find reliable guidance, trustworthy mentors, or real-time support.
             </p>
 
             <div className="grid md:grid-cols-3 gap-6 mb-16">
@@ -140,7 +140,7 @@ const Index = () => {
                 <div className="text-4xl mb-4">💔</div>
                 <h3 className="text-xl font-bold mb-2 text-deep-blue">Fragmented Knowledge</h3>
                 <p className="text-muted-foreground">
-                  Jump between 10+ platforms for learning, incubation, and funding
+                  We bring everything you need to learn and grow — no more scattered platforms.
                 </p>
               </Card>
 
@@ -148,15 +148,15 @@ const Index = () => {
                 <div className="text-4xl mb-4">⚠️</div>
                 <h3 className="text-xl font-bold mb-2 text-deep-blue">Scams & Uncertainty</h3>
                 <p className="text-muted-foreground">
-                  Unverified courses, fake mentors, predatory lending
+                  We connect you with verified mentors and trusted resources.
                 </p>
               </Card>
 
               <Card className="p-6 bg-card/95 backdrop-blur-xl border-border soft-shadow">
                 <div className="text-4xl mb-4">❌</div>
-                <h3 className="text-xl font-bold mb-2 text-deep-blue">No Real-time Help</h3>
+                <h3 className="text-xl font-bold mb-2 text-deep-blue">No Real-Time Help</h3>
                 <p className="text-muted-foreground">
-                  Critical moments—pitch prep, funding asks—zero instant support
+                  Our platform gives you instant support exactly when you need it.
                 </p>
               </Card>
             </div>
@@ -164,7 +164,7 @@ const Index = () => {
             <div className="text-center">
               <Card className="inline-block p-8 bg-accent-blue/10 backdrop-blur-xl border-accent-blue soft-shadow-lg">
                 <h3 className="text-3xl font-bold mb-4 text-deep-blue">
-                  VroPay Bridge Changes Everything
+                  VroPay Bridge solves it all — one platform, complete solutions, real-time support.
                 </h3>
                 <p className="text-lg text-muted-foreground">
                   One platform. All solutions. Real-time support.
@@ -193,10 +193,7 @@ const Index = () => {
                 <div className="text-6xl mb-4">📚</div>
                 <h3 className="text-2xl font-bold mb-4 text-accent-blue">Education</h3>
                 <ul className="space-y-2 text-muted-foreground">
-                  <li>• Startup Tuition</li>
-                  <li>• Playbooks</li>
-                  <li>• Live Expert Sessions</li>
-                  <li>• Certifications</li>
+                  <li>Get curated playbooks, certifications, and expert sessions to master startup essentials</li>
                 </ul>
               </Card>
 
@@ -204,10 +201,7 @@ const Index = () => {
                 <div className="text-6xl mb-4">🚀</div>
                 <h3 className="text-2xl font-bold mb-4 text-deep-blue">Entrepreneurship</h3>
                 <ul className="space-y-2 text-muted-foreground">
-                  <li>• Incubation</li>
-                  <li>• Hiring Platform</li>
-                  <li>• Community</li>
-                  <li>• Pitch Practice AI</li>
+                  <li>Access incubation, community support, AI-powered pitch practice, and hiring tools.</li>
                 </ul>
               </Card>
 
@@ -215,10 +209,7 @@ const Index = () => {
                 <div className="text-6xl mb-4">💳</div>
                 <h3 className="text-2xl font-bold mb-4 text-primary">Finance</h3>
                 <ul className="space-y-2 text-muted-foreground">
-                  <li>• Credit & Lending</li>
-                  <li>• Personal Finance</li>
-                  <li>• Fundraising Support</li>
-                  <li>• Investment Tracking</li>
+                  <li>Manage funds, raise capital, and get credit without the hassle.</li>
                 </ul>
               </Card>
             </div>
@@ -230,7 +221,7 @@ const Index = () => {
                   <span className="text-foreground">/month</span>
                 </p>
                 <p className="text-xl text-muted-foreground">
-                  Cheaper than a McD Meal
+                  - less than a meal out, full access to launch and grow your startup.
                 </p>
               </Card>
             </div>
@@ -248,58 +239,41 @@ const Index = () => {
             viewport={{ once: false }}
           >
             <h2 className="text-5xl md:text-7xl font-black mb-12 text-center font-display">
-              Strong Economics. <span className="text-accent-blue">Scalable Vision.</span>
+              Strong Foundations.<span className="text-accent-blue"> Scalable Opportunities.</span>
             </h2>
 
             <div className="grid md:grid-cols-3 gap-6 mb-16">
+              
               <Card className="p-8 bg-card/95 backdrop-blur-xl border-border soft-shadow">
-                <p className="text-sm text-muted-foreground mb-2 font-mono">Year 1</p>
-                <p className="text-4xl font-black text-deep-blue mb-2 font-mono">₹24 Cr</p>
-                <p className="text-sm text-muted-foreground">~1L users ARR</p>
+                <p className="text-4xl font-black text-deep-blue mb-2 font-mono">Proven growth potential</p>
+                <p className="text-sm text-muted-foreground">~our tools and guidance are designed to scale with you.</p>
               </Card>
 
               <Card className="p-8 bg-card/95 backdrop-blur-xl border-border soft-shadow">
-                <p className="text-sm text-muted-foreground mb-2 font-mono">Year 2</p>
-                <p className="text-4xl font-black text-accent-blue mb-2 font-mono">₹240 Cr</p>
-                <p className="text-sm text-muted-foreground">~10L users ARR</p>
+                <p className="text-4xl font-black text-deep-blue mb-2 font-mono">Metrics that matter</p>
+                <p className="text-sm text-muted-foreground">~high user retention, strong support systems, and a community that grows</p>
               </Card>
 
               <Card className="p-8 bg-card/95 backdrop-blur-xl border-border soft-shadow">
-                <p className="text-sm text-muted-foreground mb-2 font-mono">Year 3</p>
-                <p className="text-4xl font-black text-deep-blue mb-2 font-mono">₹2,400 Cr</p>
-                <p className="text-sm text-muted-foreground">~1Cr users ARR</p>
+                <p className="text-4xl font-black text-deep-blue mb-2 font-mono">Real-Time Mentorship</p>
+                <p className="text-sm text-muted-foreground">~Connect with verified mentors whenever you face challenges.</p>
+              </Card>
+
+              <Card className="p-8 bg-card/95 backdrop-blur-xl border-border soft-shadow">
+                <p className="text-4xl font-black text-deep-blue mb-2 font-mono">Incubation & Resources</p>
+                <p className="text-sm text-muted-foreground">~Access AI-powered pitch practice, hiring tools, and incubation programs tailored for first-time founders.</p>
+              </Card>
+
+              <Card className="p-8 bg-card/95 backdrop-blur-xl border-border soft-shadow">
+                <p className="text-4xl font-black text-deep-blue mb-2 font-mono">Affordable Access</p>
+                <p className="text-sm text-muted-foreground">~Premium features for just ₹200/month — less than a meal out, full access to launch and grow your venture.</p>
+              </Card>
+
+              <Card className="p-8 bg-card/95 backdrop-blur-xl border-border soft-shadow">
+                <p className="text-4xl font-black text-deep-blue mb-2 font-mono">Trusted & Verified</p>
+                <p className="text-sm text-muted-foreground">~Backed by investors, accelerators, and partners to ensure credibility and reliability.</p>
               </Card>
             </div>
-
-            <Card className="p-10 bg-card/95 backdrop-blur-xl border-accent-blue soft-shadow-lg mb-16">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div className="text-center md:text-left">
-                  <p className="text-sm text-muted-foreground mb-2">Unit Economics</p>
-                  <p className="text-5xl font-black font-mono">
-                    <span className="text-deep-blue">LTV/CAC:</span>{' '}
-                    <span className="text-accent-blue">60x</span>
-                  </p>
-                </div>
-                <div className="grid grid-cols-2 gap-4 text-sm">
-                  <div>
-                    <p className="text-muted-foreground">CAC</p>
-                    <p className="font-bold text-lg font-mono">₹100</p>
-                  </div>
-                  <div>
-                    <p className="text-muted-foreground">LTV</p>
-                    <p className="font-bold text-lg font-mono">₹6,000</p>
-                  </div>
-                  <div>
-                    <p className="text-muted-foreground">Churn</p>
-                    <p className="font-bold text-lg font-mono">8%/yr</p>
-                  </div>
-                  <div>
-                    <p className="text-muted-foreground">NPS</p>
-                    <p className="font-bold text-lg font-mono">72</p>
-                  </div>
-                </div>
-              </div>
-            </Card>
 
             <div className="text-center">
               <h3 className="text-4xl md:text-6xl font-black mb-6 font-display">
@@ -311,7 +285,7 @@ const Index = () => {
                 Scaling globally. Starting locally. Building for Gen-Z everywhere.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              {/*<div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
                 <Button 
                   size="lg" 
                   className="bg-primary hover:bg-primary/90 text-primary-foreground soft-shadow text-lg px-8 py-6 font-bold"
@@ -323,7 +297,7 @@ const Index = () => {
                   variant="outline"
                   className="border-primary text-primary hover:bg-primary/10 text-lg px-8 py-6 font-bold soft-shadow"
                 >
-                  Download Deck
+                  Join as Founder
                 </Button>
               </div>
 
@@ -347,7 +321,8 @@ const Index = () => {
                     <p className="font-bold text-lg font-mono">10%</p>
                   </div>
                 </div>
-              </Card>
+              </Card>*/}
+
             </div>
           </motion.div>
         </div>
