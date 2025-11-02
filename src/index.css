@@ -8,51 +8,55 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* VroPay Clean Blue Theme - White Background with Deep Blue Accents */
-    --background: 0 0% 100%;
-    --foreground: 210 100% 15%;
+    /* VroPay GenZ Vibrant Theme */
+    --background: 240 100% 96%;
+    --foreground: 250 30% 22%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 100% 15%;
+    --card-foreground: 250 30% 22%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 100% 15%;
+    --popover-foreground: 250 30% 22%;
 
-    --primary: 210 100% 15%;
+    --primary: 250 81% 74%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 213 84% 53%;
+    --secondary: 334 63% 70%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 29% 97%;
-    --muted-foreground: 210 10% 45%;
+    --muted: 240 100% 96%;
+    --muted-foreground: 0 0% 28%;
 
-    --accent: 213 84% 53%;
+    --accent: 339 98% 53%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 339 98% 53%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 210 20% 90%;
-    --input: 210 20% 90%;
-    --ring: 213 84% 53%;
+    --border: 250 81% 74% / 0.2;
+    --input: 250 81% 74% / 0.2;
+    --ring: 250 81% 74%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    /* Clean Blue Colors */
-    --deep-blue: 210 100% 15%;
-    --accent-blue: 213 84% 53%;
-    --soft-gray: 210 29% 97%;
-    --sky-start: 0 0% 100%;
-    --sky-end: 210 50% 94%;
+    /* GenZ Vibrant Colors */
+    --genz-purple: 250 81% 74%;
+    --genz-dark: 250 30% 22%;
+    --genz-pink: 334 63% 70%;
+    --genz-hotpink: 339 98% 53%;
+    --genz-lavender: 240 100% 96%;
+    --genz-gray: 0 0% 28%;
 
-    /* Gradients */
-    --gradient-sky: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 50% 94%));
-    --gradient-blue: linear-gradient(135deg, hsl(210 100% 15%), hsl(213 84% 53%));
+    /* Vibrant Gradients */
+    --gradient-purple-pink: linear-gradient(135deg, hsl(250 81% 74%), hsl(334 63% 70%));
+    --gradient-vibrant: linear-gradient(135deg, hsl(339 98% 53%), hsl(250 81% 74%));
+    --gradient-soft: linear-gradient(180deg, hsl(240 100% 96%), hsl(0 0% 100%));
     
-    /* Shadows */
-    --shadow-soft: 0 4px 20px hsl(210 100% 15% / 0.08), 0 2px 8px hsl(210 100% 15% / 0.04);
-    --shadow-soft-lg: 0 10px 40px hsl(210 100% 15% / 0.12), 0 4px 16px hsl(210 100% 15% / 0.06);
+    /* Glow Shadows */
+    --shadow-soft: 0 4px 20px hsl(250 81% 74% / 0.15), 0 2px 8px hsl(250 81% 74% / 0.08);
+    --shadow-soft-lg: 0 10px 40px hsl(250 81% 74% / 0.25), 0 4px 16px hsl(334 63% 70% / 0.15);
+    --shadow-glow: 0 0 30px hsl(250 81% 74% / 0.4), 0 0 60px hsl(334 63% 70% / 0.2);
+    --shadow-hotpink: 0 8px 32px hsl(339 98% 53% / 0.3);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.22, 0.86, 0.35, 1.0);
@@ -106,25 +110,53 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 50% 94%));
+    background: linear-gradient(180deg, hsl(240 100% 96%), hsl(0 0% 100%));
     background-attachment: fixed;
   }
 
-  /* Clean text utilities */
-  .text-deep-blue {
-    color: hsl(var(--deep-blue));
+  /* GenZ Vibrant Text Utilities */
+  .text-genz-purple {
+    color: hsl(var(--genz-purple));
   }
 
-  .text-accent-blue {
-    color: hsl(var(--accent-blue));
+  .text-genz-pink {
+    color: hsl(var(--genz-pink));
   }
 
-  /* Gradient text */
+  .text-genz-hotpink {
+    color: hsl(var(--genz-hotpink));
+  }
+
+  .text-genz-dark {
+    color: hsl(var(--genz-dark));
+  }
+
+  /* Gradient text effects */
   .gradient-text {
-    background: linear-gradient(135deg, hsl(var(--deep-blue)), hsl(var(--accent-blue)));
+    background: var(--gradient-purple-pink);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .gradient-text-vibrant {
+    background: var(--gradient-vibrant);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glass effect */
+  .glass-effect {
+    background: hsl(0 0% 100% / 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(250 81% 74% / 0.2);
+  }
+
+  .glass-effect-dark {
+    background: hsl(250 30% 22% / 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(250 81% 74% / 0.3);
   }
 }
 
@@ -135,5 +167,19 @@ All colors MUST be HSL.
 
   .soft-shadow-lg {
     box-shadow: var(--shadow-soft-lg);
+  }
+
+  .glow-shadow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .hotpink-shadow {
+    box-shadow: var(--shadow-hotpink);
+  }
+
+  .gradient-border {
+    border: 2px solid transparent;
+    background: linear-gradient(hsl(0 0% 100%), hsl(0 0% 100%)) padding-box,
+                var(--gradient-purple-pink) border-box;
   }
 }
