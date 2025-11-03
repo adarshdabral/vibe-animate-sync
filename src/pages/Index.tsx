@@ -58,23 +58,23 @@ const Index = () => {
         <div className="absolute top-32 right-[8%] w-32 h-32 bg-hot-pink/25 shape-rounded rotate-12 animate-float" style={{ animationDelay: '0.5s' }} />
         <div className="absolute bottom-40 left-[15%] w-36 h-36 bg-pink/20 shape-blob animate-float" style={{ animationDelay: '1s' }} />
         <div className="absolute bottom-20 right-[12%] w-28 h-28 bg-purple/15 rounded-3xl rotate-45 animate-float" style={{ animationDelay: '1.5s' }} />
-        
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9 }}
           className="max-w-5xl mx-auto relative z-10"
         >
-          <motion.div
+          {/* <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="inline-block mb-8 px-6 py-3 rounded-full bg-white shadow-medium border border-purple/20"
           >
-            <span className="text-sm font-bold text-dark-purple tracking-wide">🚀 INDIA'S FIRST FOUNDER OS</span>
-          </motion.div>
+            <span className="text-sm font-bold text-dark-purple tracking-wide">fghjk</span>
+          </motion.div> */}
           
           <h1 className="text-6xl sm:text-7xl md:text-9xl font-black leading-[0.95] mb-8 font-display tracking-tight">
+            <br />
             <span className="text-dark-purple">VroPay</span>
             <br />
             <span className="gradient-text-primary">Finance</span>
@@ -93,7 +93,9 @@ const Index = () => {
           transition={{ delay: 0.5, duration: 0.7 }}
           className="w-full flex justify-center mt-4 relative z-10"
         >
-          <Card className="card-glass shadow-large max-w-2xl w-full">
+          <Card className="bg-transparent shadow-none border-none max-w-2xl w-full">
+
+            
             <div className="p-8 sm:p-10">
               <div className="flex flex-wrap justify-center gap-4 mb-8">
                 {[
@@ -113,7 +115,7 @@ const Index = () => {
                 ))}
               </div>
               <motion.button
-                className="px-12 py-4 rounded-full bg-gradient-to-r from-purple to-hot-pink text-white font-bold text-lg shadow-purple hover:shadow-pink transition-smooth"
+                className="px-12 py-4 rounded-full bg-gradient-to-r from-purple to-hot-pink text-pink font-bold text-lg shadow-purple hover:shadow-pink transition-smooth"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -144,34 +146,51 @@ const Index = () => {
           <p className="text-xl sm:text-2xl text-center text-white/80 mb-16 max-w-3xl mx-auto font-medium">
             Launching a startup is tough — especially in Tier 2/3 cities. We bring you everything you need in one place.
           </p>
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+  {[
+    ['💔', 'Fragmented Knowledge', 'We bring everything you need — no more scattered platforms.', 'black'],
+    ['⚠️', 'Scams & Uncertainty', 'We connect you with verified mentors and trusted resources.', 'pink'],
+    ['❌', 'No Real-Time Help', 'Our platform gives you instant support exactly when you need it.', 'hot-pink'],
+  ].map(([icon, title, desc, accentColor], index) => {
+    // Fix for Tailwind dynamic class names
+    const borderColor =
+      accentColor === 'pink'
+        ? 'border-pink-500'
+        : accentColor === 'hot-pink'
+        ? 'border-pink-400'
+        : 'border-black';
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {[
-              ['💔', 'Fragmented Knowledge', 'We bring everything you need — no more scattered platforms.', 'hot-pink'],
-              ['⚠️', 'Scams & Uncertainty', 'We connect you with verified mentors and trusted resources.', 'pink'],
-              ['❌', 'No Real-Time Help', 'Our platform gives you instant support exactly when you need it.', 'hot-pink'],
-            ].map(([icon, title, desc, accentColor], index) => (
-              <motion.div
-                key={title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.15, duration: 0.6 }}
-                whileHover={{ y: -12, scale: 1.03 }}
-              >
-                <Card className={`card-glass-dark shadow-medium h-full p-8 hover:shadow-${accentColor === 'hot-pink' ? 'pink' : 'purple'} transition-smooth border-l-4 border-${accentColor}`}>
-                  <motion.div 
-                    className="text-6xl mb-5"
-                    whileHover={{ scale: 1.3, rotate: 15 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    {icon}
-                  </motion.div>
-                  <h3 className="text-2xl font-bold mb-4 text-white">{title}</h3>
-                  <p className="text-white/70 text-base leading-relaxed">{desc}</p>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
+    const hoverShadow =
+      accentColor === 'hot-pink'
+        ? 'hover:shadow-pink-500/50'
+        : 'hover:shadow-purple-500/50';
+
+    return (
+      <motion.div
+        key={title}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: index * 0.15, duration: 0.6 }}
+        whileHover={{ y: -12, scale: 1.03 }}
+      >
+        <Card
+          className={`card-glass-dark shadow-md h-full p-8 transition-all duration-300 border-l-4 ${borderColor} ${hoverShadow} bg-black/50 backdrop-blur-md`}
+        >
+          <motion.div
+            className="text-6xl mb-5"
+            whileHover={{ scale: 1.3, rotate: 15 }}
+            transition={{ type: 'spring', stiffness: 300 }}
+          >
+            {icon}
+          </motion.div>
+          <h3 className="text-2xl font-bold mb-4 text-white">{title}</h3>
+          <p className="text-white/80 text-base leading-relaxed">{desc}</p>
+        </Card>
+      </motion.div>
+    );
+  })}
+</div>
+
 
           <div className="text-center">
             <motion.div
@@ -287,30 +306,82 @@ const Index = () => {
             Built on proven metrics and trusted by ambitious founders across India.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-            {[
-              { title: 'Proven Growth', value: '3x', desc: 'Average founder revenue growth', color: 'purple' },
-              { title: 'Active Mentors', value: '500+', desc: 'Industry experts ready to guide', color: 'pink' },
-              { title: 'Success Rate', value: '85%', desc: 'Startups reach first milestone', color: 'hot-pink' },
-              { title: 'Capital Access', value: '₹10L+', desc: 'Average funding facilitated', color: 'purple' },
-              { title: 'Community', value: '10K+', desc: 'Founders building together', color: 'pink' },
-              { title: 'Resources', value: '1000+', desc: 'Curated playbooks & tools', color: 'hot-pink' },
-            ].map(({ title, value, desc, color }, index) => (
-              <motion.div
-                key={title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                whileHover={{ y: -10, scale: 1.04 }}
-              >
-                <Card className={`card-glass-dark p-8 shadow-medium h-full hover:shadow-${color === 'hot-pink' ? 'pink' : 'purple'} transition-smooth border-t-4 border-${color}`}>
-                  <p className={`text-5xl font-black gradient-text-${color === 'purple' ? 'primary' : 'secondary'} mb-3 font-mono`}>{value}</p>
-                  <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
-                  <p className="text-base text-white/70 leading-relaxed">{desc}</p>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+  {[
+    {
+      title: 'Proven Growth Potential',
+      desc: 'Our tools and guidance are designed to scale with you.',
+      color: 'pink',
+    },
+    {
+      title: 'Incubation and Resources',
+      desc: 'Access AI-powered pitch practice, hiring tools, and incubation programs tailored for first-time founders.',
+      color: 'purple',
+    },
+    {
+      title: 'Metrics That Matter',
+      desc: 'High user retention, strong support systems, and a thriving founder community.',
+      color: 'hot-pink',
+    },
+    {
+      title: 'Affordable Access',
+      desc: 'Launch and grow your venture at just ₹200/month — no hidden costs.',
+      color: 'pink',
+    },
+
+    {
+      title: 'Real-Time Mentorship',
+      desc: 'Get instant expert feedback through live sessions and AI-driven mentor matching.',
+      color: 'purple',
+    },
+    {
+      title: 'Trusted & Verified',
+      desc: 'Connect only with verified mentors, investors, and founders — ensuring credibility and trust.',
+      color: 'pink',
+    },
+  ].map(({ title, desc, color }, index) => {
+    const borderColor =
+      color === 'pink'
+        ? 'border-pink-500'
+        : color === 'hot-pink'
+        ? 'border-pink-400'
+        : 'border-purple-500';
+
+    const hoverShadow =
+      color === 'hot-pink'
+        ? 'hover:shadow-pink-500/50'
+        : 'hover:shadow-purple-500/50';
+
+    const gradientText =
+      color === 'purple'
+        ? 'bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent'
+        : 'bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent';
+
+    return (
+      <motion.div
+        key={title}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: index * 0.1, duration: 0.5 }}
+        whileHover={{ y: -10, scale: 1.04 }}
+      >
+        <Card
+          className={`card-glass-dark p-8 h-full shadow-md transition-all duration-300 border-t-4 ${borderColor} ${hoverShadow} bg-black/50 backdrop-blur-md`}
+        >
+          <h3
+            className={`text-2xl font-bold mb-3 ${gradientText}`}
+          >
+            {title}
+          </h3>
+          <p className="text-base text-white/70 leading-relaxed">{desc}</p>
+        </Card>
+      </motion.div>
+    );
+  })}
+</div>
+
+
+
 
           <motion.div 
             className="text-center"
@@ -318,7 +389,7 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
-            <Card className="card-glass-dark p-12 sm:p-16 shadow-large inline-block max-w-5xl">
+            <Card className="bg-transparent p-12 sm:p-16 shadow-large inline-block max-w-5xl border-white/20">
               <h3 className="text-4xl sm:text-6xl font-black mb-6 font-display leading-tight">
                 <span className="text-white">Make in India</span>
                 <br />
