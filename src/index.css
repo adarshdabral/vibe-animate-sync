@@ -8,58 +8,65 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* VroPay GenZ Vibrant Theme */
-    --background: 240 100% 96%;
-    --foreground: 250 30% 22%;
+    /* VroPay GenZ Color Palette */
+    --background: 244 100% 97%; /* EAEFFE light lavender */
+    --foreground: 247 69% 15%; /* 2D274B dark purple */
 
-    --card: 0 0% 100%;
-    --card-foreground: 250 30% 22%;
+    --card: 0 0% 100%; /* FFFFFF white */
+    --card-foreground: 247 69% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 250 30% 22%;
+    --popover-foreground: 247 69% 15%;
 
-    --primary: 250 81% 74%;
+    --primary: 250 81% 74%; /* 9787F3 purple */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 334 63% 70%;
+    --secondary: 340 63% 71%; /* E281B1 pink */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 240 100% 96%;
-    --muted-foreground: 0 0% 28%;
+    --muted: 244 100% 97%;
+    --muted-foreground: 0 0% 28%; /* 474747 gray */
 
-    --accent: 339 98% 53%;
+    --accent: 345 98% 53%; /* FD105E hot pink */
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 339 98% 53%;
+    --destructive: 345 98% 53%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 250 81% 74% / 0.2;
+    --border: 250 81% 74% / 0.15;
     --input: 250 81% 74% / 0.2;
     --ring: 250 81% 74%;
 
-    --radius: 1rem;
+    --radius: 1.2rem;
 
-    /* GenZ Vibrant Colors */
-    --genz-purple: 250 81% 74%;
-    --genz-dark: 250 30% 22%;
-    --genz-pink: 334 63% 70%;
-    --genz-hotpink: 339 98% 53%;
-    --genz-lavender: 240 100% 96%;
-    --genz-gray: 0 0% 28%;
+    /* VroPay Color System */
+    --vro-lavender: 244 100% 97%; /* EAEFFE */
+    --vro-purple: 250 81% 74%; /* 9787F3 */
+    --vro-dark: 247 69% 15%; /* 2D274B */
+    --vro-white: 0 0% 100%; /* FFFFFF */
+    --vro-pink: 340 63% 71%; /* E281B1 */
+    --vro-black: 240 6% 2%; /* 050304 */
+    --vro-gray: 0 0% 28%; /* 474747 */
+    --vro-darkgray: 0 0% 20%; /* 333333 */
+    --vro-hotpink: 345 98% 53%; /* FD105E */
 
-    /* Vibrant Gradients */
-    --gradient-purple-pink: linear-gradient(135deg, hsl(250 81% 74%), hsl(334 63% 70%));
-    --gradient-vibrant: linear-gradient(135deg, hsl(339 98% 53%), hsl(250 81% 74%));
-    --gradient-soft: linear-gradient(180deg, hsl(240 100% 96%), hsl(0 0% 100%));
+    /* Section-specific Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(250 81% 74%), hsl(345 98% 53%));
+    --gradient-problem: linear-gradient(135deg, hsl(345 98% 53%), hsl(340 63% 71%));
+    --gradient-ecosystem: linear-gradient(135deg, hsl(340 63% 71%), hsl(250 81% 74%));
+    --gradient-financials: linear-gradient(135deg, hsl(250 81% 74%), hsl(247 69% 15%));
+    --gradient-soft-bg: linear-gradient(180deg, hsl(244 100% 97%), hsl(0 0% 100%));
     
-    /* Glow Shadows */
-    --shadow-soft: 0 4px 20px hsl(250 81% 74% / 0.15), 0 2px 8px hsl(250 81% 74% / 0.08);
-    --shadow-soft-lg: 0 10px 40px hsl(250 81% 74% / 0.25), 0 4px 16px hsl(334 63% 70% / 0.15);
-    --shadow-glow: 0 0 30px hsl(250 81% 74% / 0.4), 0 0 60px hsl(334 63% 70% / 0.2);
-    --shadow-hotpink: 0 8px 32px hsl(339 98% 53% / 0.3);
+    /* Modern Shadows */
+    --shadow-card: 0 8px 32px hsl(250 81% 74% / 0.12);
+    --shadow-card-hover: 0 12px 48px hsl(250 81% 74% / 0.18);
+    --shadow-glow-purple: 0 0 40px hsl(250 81% 74% / 0.3);
+    --shadow-glow-pink: 0 0 40px hsl(340 63% 71% / 0.3);
+    --shadow-glow-hotpink: 0 0 40px hsl(345 98% 53% / 0.4);
     
     /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.22, 0.86, 0.35, 1.0);
+    --transition-smooth: all 0.4s cubic-bezier(0.22, 0.86, 0.35, 1.0);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 100%;
     --sidebar-foreground: 210 100% 15%;
@@ -110,37 +117,55 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background: linear-gradient(180deg, hsl(240 100% 96%), hsl(0 0% 100%));
+    background: var(--gradient-soft-bg);
     background-attachment: fixed;
   }
 
-  /* GenZ Vibrant Text Utilities */
-  .text-genz-purple {
-    color: hsl(var(--genz-purple));
+  /* VroPay Color Utilities */
+  .text-vro-purple {
+    color: hsl(var(--vro-purple));
   }
 
-  .text-genz-pink {
-    color: hsl(var(--genz-pink));
+  .text-vro-pink {
+    color: hsl(var(--vro-pink));
   }
 
-  .text-genz-hotpink {
-    color: hsl(var(--genz-hotpink));
+  .text-vro-hotpink {
+    color: hsl(var(--vro-hotpink));
   }
 
-  .text-genz-dark {
-    color: hsl(var(--genz-dark));
+  .text-vro-dark {
+    color: hsl(var(--vro-dark));
   }
 
-  /* Gradient text effects */
-  .gradient-text {
-    background: var(--gradient-purple-pink);
+  .bg-vro-lavender {
+    background-color: hsl(var(--vro-lavender));
+  }
+
+  /* Section-specific Gradient text */
+  .gradient-text-hero {
+    background: var(--gradient-hero);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .gradient-text-vibrant {
-    background: var(--gradient-vibrant);
+  .gradient-text-problem {
+    background: var(--gradient-problem);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-ecosystem {
+    background: var(--gradient-ecosystem);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-financials {
+    background: var(--gradient-financials);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -148,38 +173,63 @@ All colors MUST be HSL.
 
   /* Glass effect */
   .glass-effect {
-    background: hsl(0 0% 100% / 0.7);
-    backdrop-filter: blur(12px);
-    border: 1px solid hsl(250 81% 74% / 0.2);
+    background: hsl(0 0% 100% / 0.85);
+    backdrop-filter: blur(20px);
+    border: 1.5px solid hsl(0 0% 100% / 0.3);
   }
 
-  .glass-effect-dark {
-    background: hsl(250 30% 22% / 0.8);
-    backdrop-filter: blur(12px);
-    border: 1px solid hsl(250 81% 74% / 0.3);
+  /* Gradient Cards */
+  .gradient-card-hero {
+    background: linear-gradient(135deg, hsl(250 81% 74% / 0.1), hsl(345 98% 53% / 0.1));
+    border: 2px solid hsl(250 81% 74% / 0.2);
+  }
+
+  .gradient-card-problem {
+    background: linear-gradient(135deg, hsl(345 98% 53% / 0.1), hsl(340 63% 71% / 0.1));
+    border: 2px solid hsl(345 98% 53% / 0.2);
+  }
+
+  .gradient-card-ecosystem {
+    background: linear-gradient(135deg, hsl(340 63% 71% / 0.1), hsl(250 81% 74% / 0.1));
+    border: 2px solid hsl(340 63% 71% / 0.2);
+  }
+
+  /* Geometric Shapes */
+  .shape-circle {
+    border-radius: 50%;
+  }
+
+  .shape-blob {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   }
 }
 
 @layer utilities {
-  .soft-shadow {
-    box-shadow: var(--shadow-soft);
+  .shadow-card {
+    box-shadow: var(--shadow-card);
   }
 
-  .soft-shadow-lg {
-    box-shadow: var(--shadow-soft-lg);
+  .shadow-card-hover {
+    box-shadow: var(--shadow-card-hover);
   }
 
-  .glow-shadow {
-    box-shadow: var(--shadow-glow);
+  .glow-purple {
+    box-shadow: var(--shadow-glow-purple);
   }
 
-  .hotpink-shadow {
-    box-shadow: var(--shadow-hotpink);
+  .glow-pink {
+    box-shadow: var(--shadow-glow-pink);
   }
 
-  .gradient-border {
-    border: 2px solid transparent;
-    background: linear-gradient(hsl(0 0% 100%), hsl(0 0% 100%)) padding-box,
-                var(--gradient-purple-pink) border-box;
+  .glow-hotpink {
+    box-shadow: var(--shadow-glow-hotpink);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
   }
 }
