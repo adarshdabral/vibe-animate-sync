@@ -73,16 +73,11 @@ const Index = () => {
             <span className="text-sm font-bold text-dark-purple tracking-wide">fghjk</span>
           </motion.div> */}
           
-          <h1 className="text-6xl sm:text-7xl md:text-9xl font-black leading-[0.95] mb-8 font-display tracking-tight">
-            <br />
-            <span className="text-dark-purple">VroPay</span>
-            <br />
-            <span className="gradient-text-primary">Finance</span>
-            <br />
-            <span className="text-purple">EcoSystem</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 font-display">
+            <span className="gradient-text">VroPay Finance EcoSystem</span>
           </h1>
           
-          <p className="text-xl sm:text-2xl text-gray max-w-2xl mx-auto mb-10 font-medium">
+          <p className="text-base sm:text-lg md:text-xl text-gray max-w-2xl mx-auto mb-8 font-medium">
             Dream, Build, Launch — Your all-in-one platform for education, entrepreneurship, and finance.
           </p>
         </motion.div>
@@ -93,29 +88,27 @@ const Index = () => {
           transition={{ delay: 0.5, duration: 0.7 }}
           className="w-full flex justify-center mt-4 relative z-10"
         >
-          <Card className="bg-transparent shadow-none border-none max-w-2xl w-full">
-
-            
-            <div className="p-8 sm:p-10">
-              <div className="flex flex-wrap justify-center gap-4 mb-8">
+          <Card className="card-vibrant max-w-xl w-full shadow-glow-soft">
+            <div className="p-6 sm:p-8">
+              <div className="flex flex-wrap justify-center gap-3 mb-6">
                 {[
-                  ['Education', 'purple', '📚', 'bg-purple/10'],
-                  ['Entrepreneurship', 'hot-pink', '🚀', 'bg-hot-pink/10'],
-                  ['Finance', 'pink', '💳', 'bg-pink/10'],
-                ].map(([text, color, icon, bgClass]) => (
+                  ['Education', '📚'],
+                  ['Entrepreneurship', '🚀'],
+                  ['Finance', '💳'],
+                ].map(([text, icon]) => (
                   <motion.div
                     key={text}
-                    className={`flex items-center gap-3 px-6 py-3 rounded-full ${bgClass} border border-${color}/20 transition-smooth`}
-                    whileHover={{ scale: 1.1, y: -4 }}
+                    className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/80 border-2 border-purple/30 transition-smooth"
+                    whileHover={{ scale: 1.08, y: -3 }}
                     transition={{ type: "spring", stiffness: 400 }}
                   >
-                    <span className="text-2xl">{icon}</span>
-                    <span className={`text-${color} font-bold text-lg`}>{text}</span>
+                    <span className="text-xl">{icon}</span>
+                    <span className="text-dark-purple font-bold text-sm">{text}</span>
                   </motion.div>
                 ))}
               </div>
               <motion.button
-                className="px-12 py-4 rounded-full bg-gradient-to-r from-purple to-hot-pink text-pink font-bold text-lg shadow-purple hover:shadow-pink transition-smooth"
+                className="px-10 py-3.5 rounded-full bg-gradient-to-r from-purple to-hot-pink text-white font-bold text-base shadow-glow-purple hover:shadow-glow-pink transition-smooth"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -140,10 +133,10 @@ const Index = () => {
           viewport={{ once: false }}
           className="max-w-6xl mx-auto relative z-10"
         >
-          <h2 className="text-5xl sm:text-6xl md:text-7xl font-black mb-8 text-center font-display text-white leading-tight">
-            We Understand Your <span className="gradient-text-secondary">Struggle</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-center font-display text-white leading-tight">
+            We Understand Your <span className="gradient-text-vibrant">Struggle</span>
           </h2>
-          <p className="text-xl sm:text-2xl text-center text-white/80 mb-16 max-w-3xl mx-auto font-medium">
+          <p className="text-base sm:text-lg md:text-xl text-center text-white/80 mb-12 max-w-3xl mx-auto font-medium">
             Launching a startup is tough — especially in Tier 2/3 cities. We bring you everything you need in one place.
           </p>
 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
@@ -173,18 +166,16 @@ const Index = () => {
         transition={{ delay: index * 0.15, duration: 0.6 }}
         whileHover={{ y: -12, scale: 1.03 }}
       >
-        <Card
-          className={`card-glass-dark shadow-md h-full p-8 transition-all duration-300 border-l-4 ${borderColor} ${hoverShadow} bg-black/50 backdrop-blur-md`}
-        >
+        <Card className="card-vibrant-dark h-full p-6 transition-all duration-300">
           <motion.div
-            className="text-6xl mb-5"
-            whileHover={{ scale: 1.3, rotate: 15 }}
+            className="text-5xl mb-4"
+            whileHover={{ scale: 1.2, rotate: 10 }}
             transition={{ type: 'spring', stiffness: 300 }}
           >
             {icon}
           </motion.div>
-          <h3 className="text-2xl font-bold mb-4 text-white">{title}</h3>
-          <p className="text-white/80 text-base leading-relaxed">{desc}</p>
+          <h3 className="text-xl font-bold mb-3 gradient-text-vibrant">{title}</h3>
+          <p className="text-white/80 text-sm leading-relaxed">{desc}</p>
         </Card>
       </motion.div>
     );
@@ -199,11 +190,11 @@ const Index = () => {
               transition={{ delay: 0.4, duration: 0.6 }}
               whileHover={{ scale: 1.05, y: -8 }}
             >
-              <Card className="card-glass-dark p-10 sm:p-14 shadow-pink inline-block max-w-4xl">
-                <h3 className="text-4xl sm:text-5xl font-black gradient-text-secondary mb-5 leading-tight">
+              <Card className="card-vibrant-dark p-8 sm:p-12 shadow-glow-pink inline-block max-w-3xl">
+                <h3 className="text-3xl sm:text-4xl font-black gradient-text mb-4 leading-tight">
                   VroPay Bridge solves it all
                 </h3>
-                <p className="text-xl sm:text-2xl text-white/80 font-medium">
+                <p className="text-lg sm:text-xl text-white/80 font-medium">
                   One platform. All solutions. Real-time support.
                 </p>
               </Card>
@@ -226,10 +217,10 @@ const Index = () => {
           viewport={{ once: false }}
           className="max-w-6xl mx-auto relative z-10"
         >
-          <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-center mb-8 font-display text-dark-purple leading-tight">
-            A Single Engine. <span className="gradient-text-light">3 Growth Levers.</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center mb-6 font-display text-dark-purple leading-tight">
+            A Single Engine. <span className="gradient-text">3 Growth Levers.</span>
           </h2>
-          <p className="text-xl sm:text-2xl text-center text-gray mb-16 max-w-3xl mx-auto font-medium">
+          <p className="text-base sm:text-lg md:text-xl text-center text-gray mb-12 max-w-3xl mx-auto font-medium">
             Everything you need to turn your startup idea into reality — in one unified platform.
           </p>
 
@@ -246,17 +237,16 @@ const Index = () => {
                 transition={{ delay: index * 0.15, duration: 0.6 }}
                 whileHover={{ y: -14, scale: 1.05 }}
               >
-                <Card className={`${cardClass} p-10 shadow-medium h-full hover:shadow-${color === 'hot-pink' ? 'pink' : 'purple'} transition-smooth relative overflow-hidden`}>
-                  <div className={`absolute -top-16 -right-16 w-40 h-40 bg-${color}/10 rounded-full blur-2xl`} />
+                <Card className="card-vibrant h-full p-6 shadow-glow-soft hover:shadow-glow-purple transition-smooth">
                   <motion.div
-                    className="text-7xl mb-5 relative z-10"
-                    whileHover={{ scale: 1.4, rotate: 20 }}
+                    className="text-6xl mb-4"
+                    whileHover={{ scale: 1.3, rotate: 15 }}
                     transition={{ type: "spring", stiffness: 350 }}
                   >
                     {icon}
                   </motion.div>
-                  <h3 className={`text-3xl font-black mb-4 text-${color} relative z-10`}>{title}</h3>
-                  <p className="text-gray text-lg leading-relaxed relative z-10">{desc}</p>
+                  <h3 className="text-2xl font-black mb-3 gradient-text">{title}</h3>
+                  <p className="text-gray text-base leading-relaxed">{desc}</p>
                 </Card>
               </motion.div>
             ))}
@@ -269,14 +259,12 @@ const Index = () => {
               transition={{ delay: 0.5, duration: 0.6 }}
               whileHover={{ scale: 1.08, rotate: -2 }}
             >
-              <Card className="card-glass p-12 sm:p-16 shadow-large inline-block relative overflow-hidden">
-                <div className="absolute -bottom-12 -left-12 w-48 h-48 bg-pink/20 rounded-full blur-3xl" />
-                <div className="absolute -top-12 -right-12 w-40 h-40 bg-purple/20 rounded-full blur-3xl" />
-                <p className="text-6xl sm:text-8xl font-black mb-4 font-mono relative z-10">
-                  <span className="gradient-text-light">₹200</span>
+              <Card className="card-vibrant p-10 sm:p-12 shadow-glow-purple inline-block max-w-2xl">
+                <p className="text-5xl sm:text-6xl font-black mb-3 font-mono">
+                  <span className="gradient-text">₹200</span>
                   <span className="text-dark-purple">/mo</span>
                 </p>
-                <p className="text-2xl font-bold text-gray relative z-10">
+                <p className="text-xl font-bold text-gray">
                   Less than a meal — full startup access
                 </p>
               </Card>
@@ -299,10 +287,10 @@ const Index = () => {
           viewport={{ once: false }}
           className="max-w-7xl mx-auto relative z-10"
         >
-          <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-center mb-8 font-display text-white leading-tight">
-            Strong Foundations. <span className="gradient-text-light">Scalable Opportunities.</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center mb-6 font-display text-white leading-tight">
+            Strong Foundations. <span className="gradient-text-soft">Scalable Opportunities.</span>
           </h2>
-          <p className="text-xl sm:text-2xl text-center text-white/80 mb-16 max-w-3xl mx-auto font-medium">
+          <p className="text-base sm:text-lg md:text-xl text-center text-white/80 mb-12 max-w-3xl mx-auto font-medium">
             Built on proven metrics and trusted by ambitious founders across India.
           </p>
 
@@ -365,15 +353,11 @@ const Index = () => {
         transition={{ delay: index * 0.1, duration: 0.5 }}
         whileHover={{ y: -10, scale: 1.04 }}
       >
-        <Card
-          className={`card-glass-dark p-8 h-full shadow-md transition-all duration-300 border-t-4 ${borderColor} ${hoverShadow} bg-black/50 backdrop-blur-md`}
-        >
-          <h3
-            className={`text-2xl font-bold mb-3 ${gradientText}`}
-          >
+        <Card className="card-vibrant-dark p-6 h-full shadow-glow-pink transition-all duration-300">
+          <h3 className="text-xl font-bold mb-2 gradient-text">
             {title}
           </h3>
-          <p className="text-base text-white/70 leading-relaxed">{desc}</p>
+          <p className="text-sm text-white/70 leading-relaxed">{desc}</p>
         </Card>
       </motion.div>
     );
@@ -389,18 +373,18 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
-            <Card className="bg-transparent p-12 sm:p-16 shadow-large inline-block max-w-5xl border-white/20">
-              <h3 className="text-4xl sm:text-6xl font-black mb-6 font-display leading-tight">
+            <Card className="card-vibrant-dark p-10 sm:p-12 shadow-glow-pink inline-block max-w-4xl">
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 font-display leading-tight">
                 <span className="text-white">Make in India</span>
                 <br />
-                <span className="gradient-text-light">Made for the World</span>
+                <span className="gradient-text">Build for the World</span>
               </h3>
-              <p className="text-xl sm:text-2xl text-white/80 mb-10 font-medium">
-                Scaling globally. Starting locally. Building for Gen-Z everywhere.
+              <p className="text-lg sm:text-xl text-white/80 mb-8 font-medium">
+                Join India's fastest-growing startup ecosystem
               </p>
               <motion.button
-                className="px-14 py-5 rounded-full bg-gradient-to-r from-purple via-pink to-hot-pink text-white font-bold text-xl shadow-pink hover:shadow-purple transition-smooth"
-                whileHover={{ scale: 1.06, y: -3 }}
+                className="px-12 py-4 rounded-full bg-gradient-to-r from-purple via-pink to-hot-pink text-white font-bold text-lg shadow-glow-purple hover:shadow-glow-pink transition-smooth"
+                whileHover={{ scale: 1.05, y: -3 }}
                 whileTap={{ scale: 0.96 }}
               >
                 Join the Movement →
