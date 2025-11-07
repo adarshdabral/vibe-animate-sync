@@ -124,22 +124,30 @@ All colors MUST be HSL.
     background: hsl(var(--white));
   }
 
-  /* Section Backgrounds */
-  .section-hero {
-    background: var(--bg-hero);
-  }
+/* Section Backgrounds - Bold & Playful */
+.section-hero {
+  background: var(--bg-hero);
+  position: relative;
+  overflow: hidden;
+}
 
-  .section-problem {
-    background: var(--bg-problem);
-  }
+.section-problem {
+  background: var(--bg-problem);
+  position: relative;
+  overflow: hidden;
+}
 
-  .section-ecosystem {
-    background: var(--bg-ecosystem);
-  }
+.section-ecosystem {
+  background: var(--bg-ecosystem);
+  position: relative;
+  overflow: hidden;
+}
 
-  .section-financials {
-    background: var(--bg-financials);
-  }
+.section-financials {
+  background: var(--bg-financials);
+  position: relative;
+  overflow: hidden;
+}
 
   /* Text Color Utilities */
   .text-purple {
