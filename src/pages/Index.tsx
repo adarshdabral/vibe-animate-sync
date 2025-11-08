@@ -53,11 +53,12 @@ const Index = () => {
 
       {/* HERO SECTION - Light with Purple Accents */}
       <section className="section-hero relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-8 text-center overflow-hidden">
-        {/* Decorative geometric shapes */}
+        {/* Decorative geometric shapes with vibrant accents */}
         <div className="absolute top-20 left-[5%] w-40 h-40 bg-purple/20 shape-circle animate-float" />
         <div className="absolute top-32 right-[8%] w-32 h-32 bg-hot-pink/25 shape-rounded rotate-12 animate-float" style={{ animationDelay: '0.5s' }} />
-        <div className="absolute bottom-40 left-[15%] w-36 h-36 bg-pink/20 shape-blob animate-float" style={{ animationDelay: '1s' }} />
-        <div className="absolute bottom-20 right-[12%] w-28 h-28 bg-purple/15 rounded-3xl rotate-45 animate-float" style={{ animationDelay: '1.5s' }} />
+        <div className="absolute bottom-40 left-[15%] w-36 h-36 bg-neon-yellow/30 shape-blob animate-float" style={{ animationDelay: '1s' }} />
+        <div className="absolute bottom-20 right-[12%] w-28 h-28 bg-vibrant-orange/25 rounded-3xl rotate-45 animate-float" style={{ animationDelay: '1.5s' }} />
+        <div className="absolute top-1/2 left-[20%] w-24 h-24 bg-neon-yellow/20 shape-circle animate-float" style={{ animationDelay: '2s' }} />
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -88,17 +89,17 @@ const Index = () => {
           transition={{ delay: 0.5, duration: 0.7 }}
           className="w-full flex justify-center mt-4 relative z-10"
         >
-          <Card className="card-vibrant max-w-xl w-full shadow-glow-soft">
+          <Card className="card-vibrant max-w-xl w-full">
             <div className="p-6 sm:p-8">
               <div className="flex flex-wrap justify-center gap-3 mb-6">
                 {[
-                  ['Education', '📚'],
-                  ['Entrepreneurship', '🚀'],
-                  ['Finance', '💳'],
-                ].map(([text, icon]) => (
+                  ['Education', '📚', 'from-purple/20 to-hot-pink/20', 'border-purple'],
+                  ['Entrepreneurship', '🚀', 'from-neon-yellow/25 to-vibrant-orange/25', 'border-vibrant-orange'],
+                  ['Finance', '💳', 'from-pink/20 to-purple/20', 'border-pink'],
+                ].map(([text, icon, gradient, border]) => (
                   <motion.div
                     key={text}
-                    className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-purple/20 to-hot-pink/20 border-3 border-purple shadow-glow-soft hover:shadow-glow-purple transition-smooth"
+                    className={`flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r ${gradient} border-3 ${border} transition-smooth`}
                     whileHover={{ scale: 1.08, y: -3 }}
                     transition={{ type: "spring", stiffness: 400 }}
                   >
@@ -108,7 +109,7 @@ const Index = () => {
                 ))}
               </div>
               <motion.button
-                className="px-12 py-4 rounded-full bg-gradient-to-r from-purple via-hot-pink to-pink text-white font-black text-lg shadow-glow-pink hover:shadow-glow-purple transition-smooth"
+                className="px-12 py-4 rounded-full bg-gradient-to-r from-vibrant-orange via-hot-pink to-purple text-white font-black text-lg shadow-glow-orange hover:shadow-glow-pink transition-smooth"
                 whileHover={{ scale: 1.08, y: -3 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -121,10 +122,11 @@ const Index = () => {
 
       {/* PROBLEM SECTION - Dark with Hot Pink Accents */}
       <section className="section-problem relative min-h-screen flex flex-col justify-center px-4 sm:px-8 py-24 overflow-hidden">
-        {/* Decorative shapes */}
+        {/* Decorative shapes with vibrant accents */}
         <div className="absolute top-16 right-[10%] w-32 h-32 bg-hot-pink/30 rounded-3xl rotate-12 animate-float" />
-        <div className="absolute bottom-24 left-[8%] w-40 h-40 bg-pink/25 shape-circle animate-float" style={{ animationDelay: '0.7s' }} />
-        <div className="absolute top-1/3 left-[5%] w-24 h-24 bg-white/10 shape-rounded animate-float" style={{ animationDelay: '1.2s' }} />
+        <div className="absolute bottom-24 left-[8%] w-40 h-40 bg-neon-yellow/20 shape-circle animate-float" style={{ animationDelay: '0.7s' }} />
+        <div className="absolute top-1/3 left-[5%] w-24 h-24 bg-vibrant-orange/20 shape-rounded animate-float" style={{ animationDelay: '1.2s' }} />
+        <div className="absolute bottom-1/3 right-[15%] w-28 h-28 bg-neon-yellow/25 shape-blob animate-float" style={{ animationDelay: '1.8s' }} />
         
         <motion.div
           initial={{ opacity: 0 }}
@@ -133,8 +135,8 @@ const Index = () => {
           viewport={{ once: false }}
           className="max-w-6xl mx-auto relative z-10"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-center font-display text-white leading-tight drop-shadow-[0_0_30px_rgba(253,16,94,0.5)]">
-            We Understand Your <span className="gradient-text-vibrant drop-shadow-[0_0_20px_rgba(253,16,94,0.8)]">Struggle</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-center font-display text-white leading-tight">
+            We Understand Your <span className="gradient-text-vibrant">Struggle</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-center text-white/95 mb-12 max-w-3xl mx-auto font-bold">
             Launching a startup is tough — especially in Tier 2/3 cities. We bring you everything you need in one place.
@@ -205,10 +207,11 @@ const Index = () => {
 
       {/* ECOSYSTEM SECTION - Light with Pink/Purple Accents */}
       <section className="section-ecosystem relative min-h-screen flex flex-col justify-center px-4 sm:px-8 py-24 overflow-hidden">
-        {/* Decorative shapes */}
-        <div className="absolute top-24 left-[8%] w-36 h-36 bg-pink/25 rounded-3xl rotate-45 animate-float" />
+        {/* Decorative shapes with vibrant accents */}
+        <div className="absolute top-24 left-[8%] w-36 h-36 bg-neon-yellow/30 rounded-3xl rotate-45 animate-float" />
         <div className="absolute bottom-32 right-[10%] w-44 h-44 bg-purple/20 shape-blob animate-float" style={{ animationDelay: '0.6s' }} />
-        <div className="absolute top-1/2 right-[5%] w-28 h-28 bg-hot-pink/15 shape-circle animate-float" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/2 right-[5%] w-28 h-28 bg-vibrant-orange/25 shape-circle animate-float" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/3 left-[12%] w-32 h-32 bg-hot-pink/20 shape-rounded animate-float" style={{ animationDelay: '1.5s' }} />
         
         <motion.div
           initial={{ opacity: 0 }}
@@ -217,8 +220,8 @@ const Index = () => {
           viewport={{ once: false }}
           className="max-w-6xl mx-auto relative z-10"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center mb-6 font-display text-dark-purple leading-tight drop-shadow-[0_0_30px_rgba(151,135,243,0.3)]">
-            A Single Engine. <span className="gradient-text drop-shadow-[0_0_20px_rgba(151,135,243,0.5)]">3 Growth Levers.</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center mb-6 font-display text-dark-purple leading-tight">
+            A Single Engine. <span className="gradient-text">3 Growth Levers.</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-center text-dark-purple/90 mb-12 max-w-3xl mx-auto font-bold">
             Everything you need to turn your startup idea into reality — in one unified platform.
@@ -226,10 +229,10 @@ const Index = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {[
-              ['📚', 'Education', 'purple', 'Get curated playbooks and expert sessions.', 'card-gradient-purple'],
-              ['🚀', 'Entrepreneurship', 'hot-pink', 'Access AI tools, community, and incubation.', 'card-gradient-pink'],
-              ['💳', 'Finance', 'pink', 'Manage funds, raise capital, and get credit.', 'card-gradient-purple'],
-            ].map(([icon, title, color, desc, cardClass], index) => (
+              ['📚', 'Education', 'Get curated playbooks and expert sessions.', 'border-purple/50 hover:border-purple'],
+              ['🚀', 'Entrepreneurship', 'Access AI tools, community, and incubation.', 'border-vibrant-orange/50 hover:border-vibrant-orange'],
+              ['💳', 'Finance', 'Manage funds, raise capital, and get credit.', 'border-hot-pink/50 hover:border-hot-pink'],
+            ].map(([icon, title, desc, borderClass], index) => (
               <motion.div
                 key={title}
                 initial={{ opacity: 0, y: 30 }}
@@ -237,7 +240,7 @@ const Index = () => {
                 transition={{ delay: index * 0.15, duration: 0.6 }}
                 whileHover={{ y: -14, scale: 1.05 }}
               >
-                <Card className="card-vibrant h-full p-6 shadow-glow-soft hover:shadow-glow-purple transition-smooth">
+                <Card className={`card-vibrant h-full p-6 transition-smooth ${borderClass}`}>
                   <motion.div
                     className="text-6xl mb-4"
                     whileHover={{ scale: 1.3, rotate: 15 }}
@@ -245,7 +248,7 @@ const Index = () => {
                   >
                     {icon}
                   </motion.div>
-                  <h3 className="text-2xl font-black mb-3 gradient-text drop-shadow-[0_0_15px_rgba(151,135,243,0.5)]">{title}</h3>
+                  <h3 className="text-2xl font-black mb-3 gradient-text">{title}</h3>
                   <p className="text-dark-purple/80 text-base leading-relaxed font-semibold">{desc}</p>
                 </Card>
               </motion.div>
@@ -259,12 +262,12 @@ const Index = () => {
               transition={{ delay: 0.5, duration: 0.6 }}
               whileHover={{ scale: 1.08, rotate: -2 }}
             >
-              <Card className="card-vibrant p-10 sm:p-12 shadow-glow-purple inline-block max-w-2xl">
+              <Card className="card-vibrant p-10 sm:p-12 border-neon-yellow/60 hover:border-neon-yellow inline-block max-w-2xl transition-smooth">
                 <p className="text-5xl sm:text-6xl font-black mb-3 font-mono">
-                  <span className="gradient-text">₹200</span>
+                  <span className="bg-gradient-to-r from-vibrant-orange via-hot-pink to-purple bg-clip-text text-transparent">₹200</span>
                   <span className="text-dark-purple">/mo</span>
                 </p>
-                <p className="text-xl font-bold text-gray">
+                <p className="text-xl font-bold text-dark-purple/80">
                   Less than a meal — full startup access
                 </p>
               </Card>
@@ -275,10 +278,11 @@ const Index = () => {
 
       {/* FINANCIALS SECTION - Dark with Purple/Pink Accents */}
       <section className="section-financials relative min-h-screen flex flex-col justify-center px-4 sm:px-8 py-24 overflow-hidden">
-        {/* Decorative shapes */}
-        <div className="absolute top-20 right-[8%] w-40 h-40 bg-purple/20 shape-circle animate-float" />
-        <div className="absolute bottom-32 left-[10%] w-32 h-32 bg-pink/20 rounded-3xl rotate-12 animate-float" style={{ animationDelay: '0.7s' }} />
+        {/* Decorative shapes with vibrant accents */}
+        <div className="absolute top-20 right-[8%] w-40 h-40 bg-neon-yellow/20 shape-circle animate-float" />
+        <div className="absolute bottom-32 left-[10%] w-32 h-32 bg-vibrant-orange/20 rounded-3xl rotate-12 animate-float" style={{ animationDelay: '0.7s' }} />
         <div className="absolute top-1/3 left-[6%] w-28 h-28 bg-white/10 shape-blob animate-float" style={{ animationDelay: '1.3s' }} />
+        <div className="absolute bottom-1/3 right-[12%] w-36 h-36 bg-neon-yellow/25 shape-rounded animate-float" style={{ animationDelay: '1.8s' }} />
         
         <motion.div
           initial={{ opacity: 0 }}
@@ -287,8 +291,8 @@ const Index = () => {
           viewport={{ once: false }}
           className="max-w-7xl mx-auto relative z-10"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center mb-6 font-display text-white leading-tight drop-shadow-[0_0_30px_rgba(253,16,94,0.5)]">
-            Strong Foundations. <span className="gradient-text-soft drop-shadow-[0_0_20px_rgba(226,129,177,0.7)]">Scalable Opportunities.</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center mb-6 font-display text-white leading-tight">
+            Strong Foundations. <span className="gradient-text-soft">Scalable Opportunities.</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-center text-white/95 mb-12 max-w-3xl mx-auto font-bold">
             Built on proven metrics and trusted by ambitious founders across India.
@@ -354,7 +358,7 @@ const Index = () => {
         whileHover={{ y: -10, scale: 1.04 }}
       >
         <Card className="card-vibrant-dark p-6 h-full shadow-glow-pink transition-all duration-300">
-          <h3 className="text-xl font-bold mb-2 gradient-text drop-shadow-[0_0_15px_rgba(253,16,94,0.6)]">
+          <h3 className="text-xl font-bold mb-2 gradient-text">
             {title}
           </h3>
           <p className="text-sm text-white/90 leading-relaxed font-medium">{desc}</p>
@@ -373,17 +377,17 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
           >
-            <Card className="card-vibrant-dark p-10 sm:p-12 shadow-glow-pink inline-block max-w-4xl">
+            <Card className="card-vibrant-dark p-10 sm:p-12 border-neon-yellow/50 hover:border-neon-yellow inline-block max-w-4xl transition-smooth">
               <h3 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 font-display leading-tight">
                 <span className="text-white">Make in India</span>
                 <br />
-                <span className="gradient-text">Build for the World</span>
+                <span className="bg-gradient-to-r from-neon-yellow via-vibrant-orange to-hot-pink bg-clip-text text-transparent">Build for the World</span>
               </h3>
               <p className="text-lg sm:text-xl text-white/80 mb-8 font-medium">
                 Join India's fastest-growing startup ecosystem
               </p>
               <motion.button
-                className="px-14 py-5 rounded-full bg-gradient-to-r from-purple via-pink to-hot-pink text-white font-black text-xl shadow-glow-pink hover:shadow-glow-purple transition-smooth"
+                className="px-14 py-5 rounded-full bg-gradient-to-r from-neon-yellow via-vibrant-orange to-hot-pink text-white font-black text-xl shadow-glow-yellow hover:shadow-glow-orange transition-smooth"
                 whileHover={{ scale: 1.08, y: -4 }}
                 whileTap={{ scale: 0.96 }}
               >

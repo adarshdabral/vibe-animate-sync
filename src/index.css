@@ -67,11 +67,13 @@ All colors MUST be HSL.
     --bg-section-light: linear-gradient(135deg, hsl(0 0% 100%), hsl(244 100% 95%));
     --bg-section-dark: linear-gradient(135deg, hsl(247 90% 8%), hsl(240 10% 5%));
     
-    /* INTENSE Glow Shadows */
-    --shadow-glow-purple: 0 12px 48px hsl(250 95% 65% / 0.6);
-    --shadow-glow-pink: 0 12px 48px hsl(345 100% 58% / 0.7);
-    --shadow-glow-soft: 0 8px 32px hsl(340 85% 62% / 0.5);
-    --shadow-glow-electric: 0 12px 48px hsl(200 100% 55% / 0.5);
+    /* Subtle Glow Shadows */
+    --shadow-glow-purple: 0 8px 24px hsl(250 95% 65% / 0.3);
+    --shadow-glow-pink: 0 8px 24px hsl(345 100% 58% / 0.35);
+    --shadow-glow-soft: 0 6px 20px hsl(340 85% 62% / 0.25);
+    --shadow-glow-electric: 0 8px 24px hsl(200 100% 55% / 0.25);
+    --shadow-glow-yellow: 0 8px 24px hsl(50 100% 60% / 0.35);
+    --shadow-glow-orange: 0 8px 24px hsl(25 100% 55% / 0.35);
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -214,28 +216,28 @@ All colors MUST be HSL.
   .card-vibrant {
     background: linear-gradient(135deg, hsl(0 0% 100% / 0.98), hsl(244 100% 97% / 0.95));
     backdrop-filter: blur(24px);
-    border: 3px solid hsl(250 95% 65% / 0.5);
-    box-shadow: var(--shadow-glow-purple);
+    border: 3px solid hsl(250 95% 65% / 0.4);
+    box-shadow: 0 4px 16px hsl(250 95% 65% / 0.2);
     transition: var(--transition-smooth);
   }
 
   .card-vibrant:hover {
-    border-color: hsl(250 95% 65% / 0.8);
-    box-shadow: var(--shadow-glow-purple), 0 0 60px hsl(250 95% 65% / 0.3);
+    border-color: hsl(250 95% 65% / 0.6);
+    box-shadow: 0 8px 24px hsl(250 95% 65% / 0.25);
     transform: translateY(-4px);
   }
 
   .card-vibrant-dark {
     background: linear-gradient(135deg, hsl(247 90% 8% / 0.98), hsl(240 10% 5% / 0.95));
     backdrop-filter: blur(24px);
-    border: 3px solid hsl(345 100% 58% / 0.6);
-    box-shadow: var(--shadow-glow-pink);
+    border: 3px solid hsl(345 100% 58% / 0.4);
+    box-shadow: 0 4px 16px hsl(345 100% 58% / 0.2);
     transition: var(--transition-smooth);
   }
 
   .card-vibrant-dark:hover {
-    border-color: hsl(345 100% 58% / 0.9);
-    box-shadow: var(--shadow-glow-pink), 0 0 60px hsl(345 100% 58% / 0.4);
+    border-color: hsl(345 100% 58% / 0.6);
+    box-shadow: 0 8px 24px hsl(345 100% 58% / 0.25);
     transform: translateY(-4px);
   }
 
@@ -270,6 +272,14 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-glow-electric);
   }
 
+  .shadow-glow-yellow {
+    box-shadow: var(--shadow-glow-yellow);
+  }
+
+  .shadow-glow-orange {
+    box-shadow: var(--shadow-glow-orange);
+  }
+
   .transition-smooth {
     transition: var(--transition-smooth);
   }
@@ -285,12 +295,12 @@ All colors MUST be HSL.
     font-weight: 700;
     padding: 1rem 2.5rem;
     border-radius: 9999px;
-    box-shadow: var(--shadow-glow-purple);
+    box-shadow: 0 6px 20px hsl(250 95% 65% / 0.3);
     transition: var(--transition-smooth);
   }
 
   .btn-vibrant:hover {
-    box-shadow: var(--shadow-glow-pink), 0 0 80px hsl(345 100% 58% / 0.5);
+    box-shadow: 0 8px 28px hsl(345 100% 58% / 0.4);
     transform: translateY(-3px) scale(1.03);
   }
 }
