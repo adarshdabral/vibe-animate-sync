@@ -77,7 +77,7 @@ const Index = () => {
             <span className="gradient-text">VroPay Finance EcoSystem</span>
           </h1>
           
-          <p className="text-base sm:text-lg md:text-xl text-gray max-w-2xl mx-auto mb-8 font-medium">
+          <p className="text-base sm:text-lg md:text-xl text-dark-purple/90 max-w-2xl mx-auto mb-8 font-bold">
             Dream, Build, Launch — Your all-in-one platform for education, entrepreneurship, and finance.
           </p>
         </motion.div>
@@ -98,18 +98,18 @@ const Index = () => {
                 ].map(([text, icon]) => (
                   <motion.div
                     key={text}
-                    className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/80 border-2 border-purple/30 transition-smooth"
+                    className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-purple/20 to-hot-pink/20 border-3 border-purple shadow-glow-soft hover:shadow-glow-purple transition-smooth"
                     whileHover={{ scale: 1.08, y: -3 }}
                     transition={{ type: "spring", stiffness: 400 }}
                   >
-                    <span className="text-xl">{icon}</span>
-                    <span className="text-dark-purple font-bold text-sm">{text}</span>
+                    <span className="text-2xl">{icon}</span>
+                    <span className="text-dark-purple font-black text-sm">{text}</span>
                   </motion.div>
                 ))}
               </div>
               <motion.button
-                className="px-10 py-3.5 rounded-full bg-gradient-to-r from-purple to-hot-pink text-white font-bold text-base shadow-glow-purple hover:shadow-glow-pink transition-smooth"
-                whileHover={{ scale: 1.05, y: -2 }}
+                className="px-12 py-4 rounded-full bg-gradient-to-r from-purple via-hot-pink to-pink text-white font-black text-lg shadow-glow-pink hover:shadow-glow-purple transition-smooth"
+                whileHover={{ scale: 1.08, y: -3 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Get Started Now →
@@ -133,10 +133,10 @@ const Index = () => {
           viewport={{ once: false }}
           className="max-w-6xl mx-auto relative z-10"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-center font-display text-white leading-tight">
-            We Understand Your <span className="gradient-text-vibrant">Struggle</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-center font-display text-white leading-tight drop-shadow-[0_0_30px_rgba(253,16,94,0.5)]">
+            We Understand Your <span className="gradient-text-vibrant drop-shadow-[0_0_20px_rgba(253,16,94,0.8)]">Struggle</span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-center text-white/80 mb-12 max-w-3xl mx-auto font-medium">
+          <p className="text-base sm:text-lg md:text-xl text-center text-white/95 mb-12 max-w-3xl mx-auto font-bold">
             Launching a startup is tough — especially in Tier 2/3 cities. We bring you everything you need in one place.
           </p>
 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
@@ -217,10 +217,10 @@ const Index = () => {
           viewport={{ once: false }}
           className="max-w-6xl mx-auto relative z-10"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center mb-6 font-display text-dark-purple leading-tight">
-            A Single Engine. <span className="gradient-text">3 Growth Levers.</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center mb-6 font-display text-dark-purple leading-tight drop-shadow-[0_0_30px_rgba(151,135,243,0.3)]">
+            A Single Engine. <span className="gradient-text drop-shadow-[0_0_20px_rgba(151,135,243,0.5)]">3 Growth Levers.</span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-center text-gray mb-12 max-w-3xl mx-auto font-medium">
+          <p className="text-base sm:text-lg md:text-xl text-center text-dark-purple/90 mb-12 max-w-3xl mx-auto font-bold">
             Everything you need to turn your startup idea into reality — in one unified platform.
           </p>
 
@@ -245,8 +245,8 @@ const Index = () => {
                   >
                     {icon}
                   </motion.div>
-                  <h3 className="text-2xl font-black mb-3 gradient-text">{title}</h3>
-                  <p className="text-gray text-base leading-relaxed">{desc}</p>
+                  <h3 className="text-2xl font-black mb-3 gradient-text drop-shadow-[0_0_15px_rgba(151,135,243,0.5)]">{title}</h3>
+                  <p className="text-dark-purple/80 text-base leading-relaxed font-semibold">{desc}</p>
                 </Card>
               </motion.div>
             ))}
@@ -287,10 +287,10 @@ const Index = () => {
           viewport={{ once: false }}
           className="max-w-7xl mx-auto relative z-10"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center mb-6 font-display text-white leading-tight">
-            Strong Foundations. <span className="gradient-text-soft">Scalable Opportunities.</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center mb-6 font-display text-white leading-tight drop-shadow-[0_0_30px_rgba(253,16,94,0.5)]">
+            Strong Foundations. <span className="gradient-text-soft drop-shadow-[0_0_20px_rgba(226,129,177,0.7)]">Scalable Opportunities.</span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-center text-white/80 mb-12 max-w-3xl mx-auto font-medium">
+          <p className="text-base sm:text-lg md:text-xl text-center text-white/95 mb-12 max-w-3xl mx-auto font-bold">
             Built on proven metrics and trusted by ambitious founders across India.
           </p>
 
@@ -354,10 +354,10 @@ const Index = () => {
         whileHover={{ y: -10, scale: 1.04 }}
       >
         <Card className="card-vibrant-dark p-6 h-full shadow-glow-pink transition-all duration-300">
-          <h3 className="text-xl font-bold mb-2 gradient-text">
+          <h3 className="text-xl font-bold mb-2 gradient-text drop-shadow-[0_0_15px_rgba(253,16,94,0.6)]">
             {title}
           </h3>
-          <p className="text-sm text-white/70 leading-relaxed">{desc}</p>
+          <p className="text-sm text-white/90 leading-relaxed font-medium">{desc}</p>
         </Card>
       </motion.div>
     );
@@ -383,8 +383,8 @@ const Index = () => {
                 Join India's fastest-growing startup ecosystem
               </p>
               <motion.button
-                className="px-12 py-4 rounded-full bg-gradient-to-r from-purple via-pink to-hot-pink text-white font-bold text-lg shadow-glow-purple hover:shadow-glow-pink transition-smooth"
-                whileHover={{ scale: 1.05, y: -3 }}
+                className="px-14 py-5 rounded-full bg-gradient-to-r from-purple via-pink to-hot-pink text-white font-black text-xl shadow-glow-pink hover:shadow-glow-purple transition-smooth"
+                whileHover={{ scale: 1.08, y: -4 }}
                 whileTap={{ scale: 0.96 }}
               >
                 Join the Movement →

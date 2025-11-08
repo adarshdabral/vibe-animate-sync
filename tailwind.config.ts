@@ -64,6 +64,9 @@ export default {
         'hot-pink': 'hsl(var(--hot-pink))',
         'gray': 'hsl(var(--gray))',
         'dark-gray': 'hsl(var(--dark-gray))',
+        'electric-blue': 'hsl(var(--electric-blue))',
+        'neon-yellow': 'hsl(var(--neon-yellow))',
+        'vibrant-orange': 'hsl(var(--vibrant-orange))',
       },
       borderRadius: {
         lg: "var(--radius)",
