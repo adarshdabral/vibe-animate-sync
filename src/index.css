@@ -8,72 +8,69 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* ULTRA VIBRANT Color System - High Contrast & Attention-Grabbing */
-    --background: 244 100% 98%; /* Even lighter lavender for max contrast */
-    --foreground: 247 90% 10%; /* Deeper dark purple for stronger contrast */
+    /* BOLD & PLAYFUL Color System - Creative Learning Brand */
+    --background: 220 22% 96%; /* Off-white background #F1F3F7 */
+    --foreground: 236 65% 18%; /* Navy for text #0F154C */
 
     --card: 0 0% 100%;
-    --card-foreground: 247 90% 10%;
+    --card-foreground: 236 65% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 247 90% 10%;
+    --popover-foreground: 236 65% 18%;
 
-    --primary: 250 95% 65%; /* More saturated purple */
+    --primary: 241 100% 59%; /* Vivid royal blue #2F2CFF */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 345 100% 58%; /* ULTRA vibrant hot pink */
+    --secondary: 166 100% 41%; /* Teal #00D1A3 */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 244 100% 97%;
-    --muted-foreground: 0 0% 20%; /* Darker for better contrast */
+    --muted: 220 22% 92%;
+    --muted-foreground: 236 30% 40%;
 
-    --accent: 340 85% 62%; /* More vibrant pink */
-    --accent-foreground: 0 0% 100%;
+    --accent: 54 100% 50%; /* Bright yellow #FFE600 */
+    --accent-foreground: 236 65% 18%;
 
-    --destructive: 345 100% 58%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 250 95% 65% / 0.3;
-    --input: 250 95% 65% / 0.2;
-    --ring: 250 95% 65%;
+    --border: 241 100% 59% / 0.2;
+    --input: 241 100% 59% / 0.15;
+    --ring: 241 100% 59%;
 
-    --radius: 1.5rem;
+    --radius: 1rem;
 
-    /* ULTRA VIBRANT Color Palette */
-    --lavender: 244 100% 98%; /* Lighter base */
-    --purple: 250 95% 65%; /* More saturated */
-    --dark-purple: 247 90% 10%; /* Deeper for contrast */
+    /* Brand Color Palette */
+    --off-white: 220 22% 96%; /* #F1F3F7 */
+    --royal-blue: 241 100% 59%; /* #2F2CFF */
+    --bright-yellow: 54 100% 50%; /* #FFE600 */
+    --teal: 166 100% 41%; /* #00D1A3 */
+    --navy: 236 65% 18%; /* #0F154C */
+    --navy-dark: 236 70% 12%; /* Darker navy for depth */
+    
+    /* Supporting colors */
     --white: 0 0% 100%;
-    --pink: 340 85% 62%; /* More vibrant */
-    --black: 240 10% 5%; /* Deeper black */
-    --gray: 0 0% 20%; /* Darker gray for better readability */
-    --dark-gray: 0 0% 12%; /* Even darker */
-    --hot-pink: 345 100% 58%; /* ULTRA vibrant */
-    
-    /* NEW: Electric accent colors */
-    --electric-blue: 200 100% 55%;
-    --neon-yellow: 50 100% 60%;
-    --vibrant-orange: 25 100% 55%;
+    --black: 0 0% 0%;
+    --gray-light: 220 20% 85%;
+    --gray: 220 15% 50%;
 
-    /* HIGH IMPACT Gradient System */
-    --gradient-main: linear-gradient(135deg, hsl(250 95% 65%), hsl(345 100% 58%));
-    --gradient-soft: linear-gradient(135deg, hsl(340 85% 62%), hsl(250 95% 65%));
-    --gradient-vibrant: linear-gradient(135deg, hsl(345 100% 58%), hsl(340 85% 62%));
-    --gradient-electric: linear-gradient(135deg, hsl(250 95% 65%), hsl(200 100% 55%));
-    --gradient-sunset: linear-gradient(135deg, hsl(25 100% 55%), hsl(345 100% 58%));
+    /* Bold Gradient System */
+    --gradient-main: linear-gradient(135deg, hsl(241 100% 59%), hsl(166 100% 41%));
+    --gradient-blue-teal: linear-gradient(135deg, hsl(241 100% 59%), hsl(166 100% 41%));
+    --gradient-yellow-teal: linear-gradient(135deg, hsl(54 100% 50%), hsl(166 100% 41%));
+    --gradient-blue-yellow: linear-gradient(135deg, hsl(241 100% 59%), hsl(54 100% 50%));
     
-    /* Section Backgrounds - Maximum Contrast */
-    --bg-hero: linear-gradient(135deg, hsl(244 100% 98%), hsl(250 95% 65% / 0.15));
-    --bg-section-light: linear-gradient(135deg, hsl(0 0% 100%), hsl(244 100% 95%));
-    --bg-section-dark: linear-gradient(135deg, hsl(247 90% 8%), hsl(240 10% 5%));
+    /* Section Backgrounds - Clean & Bold */
+    --bg-hero: linear-gradient(135deg, hsl(220 22% 96%), hsl(241 100% 59% / 0.05));
+    --bg-section-light: linear-gradient(135deg, hsl(0 0% 100%), hsl(220 22% 96%));
+    --bg-section-dark: linear-gradient(135deg, hsl(236 65% 18%), hsl(236 70% 12%));
+    --bg-section-yellow: linear-gradient(135deg, hsl(54 100% 50% / 0.15), hsl(220 22% 96%));
+    --bg-section-teal: linear-gradient(135deg, hsl(166 100% 41% / 0.1), hsl(220 22% 96%));
     
-    /* Subtle Glow Shadows */
-    --shadow-glow-purple: 0 8px 24px hsl(250 95% 65% / 0.3);
-    --shadow-glow-pink: 0 8px 24px hsl(345 100% 58% / 0.35);
-    --shadow-glow-soft: 0 6px 20px hsl(340 85% 62% / 0.25);
-    --shadow-glow-electric: 0 8px 24px hsl(200 100% 55% / 0.25);
-    --shadow-glow-yellow: 0 8px 24px hsl(50 100% 60% / 0.35);
-    --shadow-glow-orange: 0 8px 24px hsl(25 100% 55% / 0.35);
+    /* Subtle Shadows */
+    --shadow-glow-blue: 0 4px 20px hsl(241 100% 59% / 0.2);
+    --shadow-glow-yellow: 0 4px 20px hsl(54 100% 50% / 0.25);
+    --shadow-glow-teal: 0 4px 20px hsl(166 100% 41% / 0.2);
+    --shadow-soft: 0 2px 12px hsl(236 65% 18% / 0.08);
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -128,7 +125,7 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background: hsl(var(--lavender));
+    background: hsl(var(--off-white));
   }
 
   /* Section Backgrounds - Unified Vibrant Theme */
@@ -149,20 +146,20 @@ All colors MUST be HSL.
   }
 
   /* Text Color Utilities */
-  .text-purple {
-    color: hsl(var(--purple));
+  .text-royal-blue {
+    color: hsl(var(--royal-blue));
   }
 
-  .text-dark-purple {
-    color: hsl(var(--dark-purple));
+  .text-bright-yellow {
+    color: hsl(var(--bright-yellow));
   }
 
-  .text-pink {
-    color: hsl(var(--pink));
+  .text-teal {
+    color: hsl(var(--teal));
   }
 
-  .text-hot-pink {
-    color: hsl(var(--hot-pink));
+  .text-navy {
+    color: hsl(var(--navy));
   }
 
   .text-light {
@@ -170,27 +167,27 @@ All colors MUST be HSL.
   }
 
   /* Background Utilities */
-  .bg-purple {
-    background-color: hsl(var(--purple));
+  .bg-royal-blue {
+    background-color: hsl(var(--royal-blue));
   }
 
-  .bg-dark-purple {
-    background-color: hsl(var(--dark-purple));
+  .bg-bright-yellow {
+    background-color: hsl(var(--bright-yellow));
   }
 
-  .bg-pink {
-    background-color: hsl(var(--pink));
+  .bg-teal {
+    background-color: hsl(var(--teal));
   }
 
-  .bg-hot-pink {
-    background-color: hsl(var(--hot-pink));
+  .bg-navy {
+    background-color: hsl(var(--navy));
   }
 
-  .bg-lavender {
-    background-color: hsl(var(--lavender));
+  .bg-off-white {
+    background-color: hsl(var(--off-white));
   }
 
-  /* Gradient Text Effects - Unified Vibrant */
+  /* Gradient Text Effects - Bold & Playful */
   .gradient-text {
     background: var(--gradient-main);
     -webkit-background-clip: text;
@@ -198,47 +195,46 @@ All colors MUST be HSL.
     background-clip: text;
   }
 
-  .gradient-text-soft {
-    background: var(--gradient-soft);
+  .gradient-text-blue-teal {
+    background: var(--gradient-blue-teal);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .gradient-text-vibrant {
-    background: var(--gradient-vibrant);
+  .gradient-text-yellow-teal {
+    background: var(--gradient-yellow-teal);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  /* Card Styles - ULTRA VIBRANT */
+  /* Card Styles - Bold & Clean */
   .card-vibrant {
-    background: linear-gradient(135deg, hsl(0 0% 100% / 0.98), hsl(244 100% 97% / 0.95));
-    backdrop-filter: blur(24px);
-    border: 3px solid hsl(250 95% 65% / 0.4);
-    box-shadow: 0 4px 16px hsl(250 95% 65% / 0.2);
+    background: hsl(0 0% 100%);
+    border: 2px solid hsl(241 100% 59% / 0.2);
+    box-shadow: var(--shadow-soft);
     transition: var(--transition-smooth);
   }
 
   .card-vibrant:hover {
-    border-color: hsl(250 95% 65% / 0.6);
-    box-shadow: 0 8px 24px hsl(250 95% 65% / 0.25);
-    transform: translateY(-4px);
+    border-color: hsl(241 100% 59% / 0.4);
+    box-shadow: var(--shadow-glow-blue);
+    transform: translateY(-2px);
   }
 
   .card-vibrant-dark {
-    background: linear-gradient(135deg, hsl(247 90% 8% / 0.98), hsl(240 10% 5% / 0.95));
-    backdrop-filter: blur(24px);
-    border: 3px solid hsl(345 100% 58% / 0.4);
-    box-shadow: 0 4px 16px hsl(345 100% 58% / 0.2);
+    background: hsl(236 65% 18%);
+    color: hsl(var(--white));
+    border: 2px solid hsl(166 100% 41% / 0.3);
+    box-shadow: var(--shadow-soft);
     transition: var(--transition-smooth);
   }
 
   .card-vibrant-dark:hover {
-    border-color: hsl(345 100% 58% / 0.6);
-    box-shadow: 0 8px 24px hsl(345 100% 58% / 0.25);
-    transform: translateY(-4px);
+    border-color: hsl(166 100% 41% / 0.5);
+    box-shadow: var(--shadow-glow-teal);
+    transform: translateY(-2px);
   }
 
   /* Decorative Elements */
@@ -256,28 +252,20 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
-  .shadow-glow-purple {
-    box-shadow: var(--shadow-glow-purple);
-  }
-
-  .shadow-glow-pink {
-    box-shadow: var(--shadow-glow-pink);
-  }
-
-  .shadow-glow-soft {
-    box-shadow: var(--shadow-glow-soft);
-  }
-
-  .shadow-glow-electric {
-    box-shadow: var(--shadow-glow-electric);
+  .shadow-glow-blue {
+    box-shadow: var(--shadow-glow-blue);
   }
 
   .shadow-glow-yellow {
     box-shadow: var(--shadow-glow-yellow);
   }
 
-  .shadow-glow-orange {
-    box-shadow: var(--shadow-glow-orange);
+  .shadow-glow-teal {
+    box-shadow: var(--shadow-glow-teal);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
   }
 
   .transition-smooth {
@@ -288,19 +276,20 @@ All colors MUST be HSL.
     transition: var(--transition-bounce);
   }
 
-  /* High-Impact Button Styles */
+  /* Bold Button Styles */
   .btn-vibrant {
-    background: var(--gradient-main);
+    background: hsl(var(--royal-blue));
     color: white;
     font-weight: 700;
     padding: 1rem 2.5rem;
     border-radius: 9999px;
-    box-shadow: 0 6px 20px hsl(250 95% 65% / 0.3);
+    box-shadow: var(--shadow-glow-blue);
     transition: var(--transition-smooth);
   }
 
   .btn-vibrant:hover {
-    box-shadow: 0 8px 28px hsl(345 100% 58% / 0.4);
-    transform: translateY(-3px) scale(1.03);
+    background: hsl(241 100% 55%);
+    box-shadow: 0 6px 24px hsl(241 100% 59% / 0.35);
+    transform: translateY(-2px) scale(1.02);
   }
 }
